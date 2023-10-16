@@ -140,12 +140,19 @@ kaiju-mkfmi /home/wmj412/data/wmj412.aleks/hallstatt_maize/kaiju_part/plants/pla
 ## Taxonomic assignment (OBS: here Kaiju (v1.9.2) VS Kaiju (v1.5.0) used in Reynoso-García et al.)
 #### First database (nr_euk)
 ```
-kaiju -t nodes.dmp -f kaiju_db_nr_euk.fmi -i sample_post_metawrap_1.fastq -j sample_post_metawrap_2.fastq  -o sample.out −a greedy −E 0.05 -z 32
+SAMPLE_LIST=hallstatt_names.txt
+SAMPLE=$(sed -n "$SLURM_ARRAY_TASK_ID"p $SAMPLE_LIST)
+
+kaiju -t nodes.dmp -f kaiju_db_nr_euk.fmi -i ${SAMPLE}_1_val_1.fq.gz -j ${SAMPLE}_2_val_2.fq.gz -o output/${SAMPLE}_metawrap.out -a greedy -E 0.05 -z 32
+
 ```
 
 #### Second database (custom plants)
 ```
-kaiju -t nodes.dmp -f plant.fmi -i sample_post_metawrap_1.fastq -j sample_post_metawrap_2.fastq  -o sample.out -a greedy -E 0.05 -z 32
+SAMPLE_LIST=hallstatt_names.txt
+SAMPLE=$(sed -n "$SLURM_ARRAY_TASK_ID"p $SAMPLE_LIST)
+
+kaiju -t nodes.dmp -f plant.fmi -i ${SAMPLE}_1_val_1.fq.gz -j ${SAMPLE}_2_val_2.fq.gz -o output/${SAMPLE}_metawrap.out -a greedy -E 0.05 -z 32
 ```
 ### Post-processing: 
 #### See here for more options: https://github.com/bioinformatics-centre/kaiju#output-format 
