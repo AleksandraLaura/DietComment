@@ -8,4 +8,7 @@ mv fastq\?acc\=SRR24300527 Saladoid_coprolite_SRR24300527.fastq.gz
 ```
 
 ### Run "pathopipe"
-(What do I post here)
+I used this pipeline: 
+https://github.com/martinsikora/pathopipe
+
+With all NCBI cp and mt genomes as targets. 
