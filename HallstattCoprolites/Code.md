@@ -137,7 +137,7 @@ kaiju-mkbwt -n 32 -a ACDEFGHIKLMNPQRSTVWY -o /home/wmj412/data/wmj412.aleks/hall
 kaiju-mkfmi /home/wmj412/data/wmj412.aleks/hallstatt_maize/kaiju_part/plants/plants
 ```
 
-## Taxonomic assignment (OBS: here Kaiju (v1.9.2) VS Kaiju (v1.5.0) used in Reynoso-García et al.)
+## Taxonomic assignment (OBS: here Kaiju (v1.9.2) VS Kaiju (v1.5.0) used in Reynoso-García et al.) <- in the future, add the '-v' option for easier output analysis.
 #### First database (nr_euk)
 ```
 SAMPLE_LIST=hallstatt_names.txt
