@@ -2,7 +2,7 @@
 
 1. Get the full list of nr_euk taxa from [Kaiju](https://github.com/bioinformatics-centre/kaiju/blob/master/util/kaiju-taxonlistEuk.tsv). 
 
-2. Add the taxIDs for the genera of interest (it wasn't specified in the paper which taxon IDs from plant sequences from the NCBI nr database were also included, so we incuded the genera of the 9 "hit/target" species they report - 8 genera based on [NCBI taxonomy database](https://www.ncbi.nlm.nih.gov/taxonomy)) can be found in this repository).\
+2. Add the taxIDs for the genera of interest (it wasn't specified in [the paper](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0292077#sec031) which taxon IDs from plant sequences from the NCBI nr database were also included, so we incuded the genera of the 9 "hit/target" species they report - 8 genera based on [NCBI taxonomy database](https://www.ncbi.nlm.nih.gov/taxonomy)) can be found in this repository).\
    *The resulting [.tsv file](https://github.com/AleksandraLaura/CoproliteAnalysesCommentaryALP/blob/main/2.%20Kaiju/kaiju-taxonlistEuk.tsv) can be found in this repository.*
     
 4. Based on [this code from the Kaiju repository](https://github.com/bioinformatics-centre/kaiju/blob/master/util/kaiju-makedb), here are all the steps to make the database: 
