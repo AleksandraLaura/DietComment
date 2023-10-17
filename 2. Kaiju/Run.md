@@ -1,4 +1,6 @@
-# Taxonomic assignment (OBS: here Kaiju (v1.9.2) VS Kaiju (v1.5.0) used in Reynoso-García et al.) <- in the future, add the '-v' option for easier output analysis.
+# Taxonomic assignment 
+##### (OBS: here Kaiju (v1.9.2) VS Kaiju (v1.5.0) used in Reynoso-García et al.)\
+##### (in the future, add the '-v' option for easier output analysis.)
 
 ### Actuall run:
 ```
