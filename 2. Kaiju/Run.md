@@ -5,10 +5,10 @@
 ### Actuall run:
 ```
 #Edit the SAMPLE_LIST to fit the data being processed. 
-SAMPLE_LIST=hallstatt_names.txt
+SAMPLE_LIST=samplelist.txt
 SAMPLE=$(sed -n "$SLURM_ARRAY_TASK_ID"p $SAMPLE_LIST)
 
-kaiju -t nodes.dmp -f plant.fmi -i ${SAMPLE}_1_val_1.fq.gz -j ${SAMPLE}_2_val_2.fq.gz -o output/${SAMPLE}_metawrap.out -a greedy -E 0.05 -z 32
+kaiju -t nodes.dmp -f kaiju_db_nr_euk.fmi -i ${SAMPLE}_1_val_1.fq.gz -j ${SAMPLE}_2_val_2.fq.gz -o output/${SAMPLE}.out -a greedy -E 0.05 -z 32
 ```
 
 ### Post-processing of the output: 
@@ -16,10 +16,10 @@ kaiju -t nodes.dmp -f plant.fmi -i ${SAMPLE}_1_val_1.fq.gz -j ${SAMPLE}_2_val_2.
 
 #### Get only the classified:
 ```
-for line in $(cat ../samplelist.txt); do grep -v "U" ${line}.combined.out > ${line}.classified.out; done
+for line in $(cat ../samplelist.txt); do grep -v "U" ${line}.out > ${line}.classified.out; done
 ```
 
 #### Add taxon names:
 ```
-for line in $(cat ../samplelist.txt); do kaiju-addTaxonNames -t ../plants/nodes.dmp -n ../plants/names.dmp -i ${line}.classified.out -o ${line}.names.out; done
+for line in $(cat ../samplelist.txt); do kaiju-addTaxonNames -t ../nodes.dmp -n ../names.dmp -i ${line}.classified.out -o ${line}.names.out; done
 ```
