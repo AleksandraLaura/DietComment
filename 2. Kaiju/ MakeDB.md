@@ -6,9 +6,8 @@
     
 3. Based on https://github.com/bioinformatics-centre/kaiju/blob/master/util/kaiju-makedb:
    ```
-   #----------------------------------------------------------------------------------------------------------------------------------
-if [ "$DB" = "nr_euk" ]
-then
+   if [ "$DB" = "nr_euk" ]
+   then
 	mkdir -p $DB
 	if [ $DL -eq 1 ]
 	then
@@ -29,8 +28,8 @@ then
 	kaiju-mkbwt -e $exponentSA_NR -n $threadsBWT -a ACDEFGHIKLMNPQRSTVWY -o $DB/kaiju_db_$DB $DB/kaiju_db_$DB.faa
 	echo Creating FM-index
 	kaiju-mkfmi $DB/kaiju_db_$DB
-fi
+   fi
 
-#And delete everything but the names, nodes and .fmi files
+   #And delete everything but the names, nodes and .fmi files
    ```
 4. Here is a bunch of other intermediate steps to make it all make sense: 
