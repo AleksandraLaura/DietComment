@@ -1,6 +1,13 @@
 1. Code to download the data from Reynoso-García et al.
 ```
+#CHANGE (!!!!!!)
+wget https://www.be-md.ncbi.nlm.nih.gov/Traces/sra-reads-be/fastq?acc=SRR24300528
+wget https://www.be-md.ncbi.nlm.nih.gov/Traces/sra-reads-be/fastq?acc=SRR24300527
+
+mv fastq\?acc\=SRR24300528 Huecoid_coprolite_SRR24300528.fastq.gz
+mv fastq\?acc\=SRR24300527 Saladoid_coprolite_SRR24300527.fastq.gz
 ```
+
 
 2. Code to download the Hallstatt data ((https://www.ebi.ac.uk/ena/browser/view/PRJEB44507))
 ```
