@@ -9,12 +9,12 @@
    ```
    #First download the taxdump:
    #download , this is needed in all cases
-   wget -N -nv $wgetProgress http://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump.tar.gz
+   wget -N http://ftp.ncbi.nlm.nih.gov/pub/taxonomy/taxdump.tar.gz
    tar xf taxdump.tar.gz nodes.dmp names.dmp merged.dmp
    
    #Download the nr data from NCBI:
-   wget -c -nv $wgetProgress -P nr_euk https://ftp.ncbi.nih.gov/blast/db/FASTA/nr.gz
-   wget -c -nv $wgetProgress -P nr_euk https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/accession2taxid/prot.accession2taxid.gz
+   wget -c -P nr_euk https://ftp.ncbi.nih.gov/blast/db/FASTA/nr.gz
+   wget -c -P nr_euk https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/accession2taxid/prot.accession2taxid.gz
 
    #Download the needed files:
    wget https://github.com/bioinformatics-centre/kaiju/blob/master/util/kaiju-excluded-accessions.txt
