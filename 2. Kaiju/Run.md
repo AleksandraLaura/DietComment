@@ -2,7 +2,7 @@
 **(OBS: here Kaiju (v1.9.2) VS Kaiju (v1.5.0) used in Reynoso-García et al.)**\
 **(in the future, add the '-v' option for easier output analysis.)**
 
-### Actuall run:
+### Actual run:
 ```
 #Edit the SAMPLE_LIST to fit the data being processed. 
 SAMPLE_LIST=samplelist.txt
