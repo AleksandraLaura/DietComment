@@ -1,33 +1,4 @@
-# metaWrap (1.3.2)
-
-## Make index to remove human sequences (as followed here: https://github.com/bxlab/metaWRAP/blob/master/installation/database_installation.md#making-host-genome-index-for-bmtagger):
-```
-mkdir BMTAGGER_INDEX
-cd BMTAGGER_INDEX
-wget ftp://hgdownload.soe.ucsc.edu/goldenPath/hg38/chromosomes/*fa.gz
-gunzip *fa.gz
-cat *fa > hg38.fa
-rm chr*.fa
-
-bmtool -d hg38.fa -o hg38.bitmask
-srprism mkindex -i hg38.fa -o hg38.srprism -M 100000
-
-BMTAGGER_DB=/path/to/your/index/BMTAGGER_INDEX
-```
-
-## Run metaWrap (1.3.2)
-```
-SAMPLE_LIST=hallstatt_names.txt
-SAMPLE=$(sed -n "$SLURM_ARRAY_TASK_ID"p $SAMPLE_LIST)
-
-metaWRAP read_qc -1 raw_fastq/${SAMPLE}_1.fastq.gz -2 raw_fastq/${SAMPLE}_2.fastq.gz -o metawrap_output/$SAMPLE -t 5
-```
-
 # Database creation for Kaiju:
-
-## nr_euk
-Automatic download link with the database from https://bioinformatics-centre.github.io/kaiju/downloads.html:
-- https://kaiju-idx.s3.eu-central-1.amazonaws.com/2023/kaiju_db_nr_euk_2023-05-10.tgz
 
 ## plant taxa mentioned in Reynoso-García et al.
 
@@ -95,7 +66,7 @@ kaiju-mkbwt -n 32 -a ACDEFGHIKLMNPQRSTVWY -o /home/wmj412/data/wmj412.aleks/hall
 kaiju-mkfmi /home/wmj412/data/wmj412.aleks/hallstatt_maize/kaiju_part/plants/plants
 ```
 
-## Taxonomic assignment (OBS: here Kaiju (v1.9.2) VS Kaiju (v1.5.0) used in Reynoso-García et al.) <- in the future, add the '-v' option for easier output analysis.
+# Taxonomic assignment (OBS: here Kaiju (v1.9.2) VS Kaiju (v1.5.0) used in Reynoso-García et al.) <- in the future, add the '-v' option for easier output analysis.
 #### First database (nr_euk)
 ```
 SAMPLE_LIST=hallstatt_names.txt
@@ -112,7 +83,8 @@ SAMPLE=$(sed -n "$SLURM_ARRAY_TASK_ID"p $SAMPLE_LIST)
 
 kaiju -t nodes.dmp -f plant.fmi -i ${SAMPLE}_1_val_1.fq.gz -j ${SAMPLE}_2_val_2.fq.gz -o output/${SAMPLE}_metawrap.out -a greedy -E 0.05 -z 32
 ```
-### Post-processing: 
+
+## Post-processing of the output: 
 #### See here for more options: https://github.com/bioinformatics-centre/kaiju#output-format 
 
 #### All of the output files need to be sorted to be merged:
