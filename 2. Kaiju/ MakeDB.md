@@ -25,7 +25,7 @@
    gunzip -c nr_euk/nr.gz | kaiju-convertNR -m merged.dmp -t nodes.dmp -g nr_euk/prot.accession2taxid.gz -e kaiju-excluded-accessions.txt -a -o nr_euk/kaiju_db_nr_euk.faa -l kaiju-taxonlistEuk.tsv
 
    #The BWT
-   kaiju-mkbwt -e $exponentSA_NR -n $threadsBWT -a ACDEFGHIKLMNPQRSTVWY -o nr_euk/kaiju_db_nr_euk nr_euk/kaiju_db_nr_euk.faa
+   kaiju-mkbwt -n 32 -a ACDEFGHIKLMNPQRSTVWY -o nr_euk/kaiju_db_nr_euk nr_euk/kaiju_db_nr_euk.faa
    # FM-index
    kaiju-mkfmi nr_euk/kaiju_db_nr_euk
 
