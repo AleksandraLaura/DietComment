@@ -7,4 +7,4 @@ The datasets used in here are
 3. Neanderthal ()
 4. Ötzi ()
 
-For any questions or comments, feel free to submit an issue or e-mail me on: aleksandra.pach@sund.ku.dk
+For any questions or comments feel free to submit an issue or e-mail me on: aleksandra.pach@sund.ku.dk
