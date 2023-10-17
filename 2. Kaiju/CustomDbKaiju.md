@@ -1,8 +1,6 @@
-# Database creation for Kaiju:
+# Custom Database creation for Kaiju from protein sequences:
 
-## plant taxa mentioned in Reynoso-García et al.
-
-#### Download fasta file (and accession list):
+#### Download fasta file (and accession list) - plant taxa mentioned in Reynoso-García et al.:
 ```
 esearch -db protein -query '("Zea mays"[Organism] OR "Carica papaya"[Organism] OR "Arachis hypogaea"[Organism] OR "Arachis duranensis"[Organism] OR "Ipomoea batatas"[Organism] OR "Capsicum annuum"[Organism] OR "Nicotiana sylvestris"[Organism] OR "Solanum lycopersicum"[Organism] OR "Gossypium barbadense"[Organism]) AND plants[filter]' | efetch -format fasta > plant_prot.fasta
 ```
@@ -64,45 +62,4 @@ awk 'FNR==NR {f2[$1]=$2;next} /^>/ { for (i in f2) { if (index(substr($1,2), i))
 ```
 kaiju-mkbwt -n 32 -a ACDEFGHIKLMNPQRSTVWY -o /home/wmj412/data/wmj412.aleks/hallstatt_maize/kaiju_part/plants/plants kaiju_sequences.faa
 kaiju-mkfmi /home/wmj412/data/wmj412.aleks/hallstatt_maize/kaiju_part/plants/plants
-```
-
-# Taxonomic assignment (OBS: here Kaiju (v1.9.2) VS Kaiju (v1.5.0) used in Reynoso-García et al.) <- in the future, add the '-v' option for easier output analysis.
-#### First database (nr_euk)
-```
-SAMPLE_LIST=hallstatt_names.txt
-SAMPLE=$(sed -n "$SLURM_ARRAY_TASK_ID"p $SAMPLE_LIST)
-
-kaiju -t nodes.dmp -f kaiju_db_nr_euk.fmi -i ${SAMPLE}_1_val_1.fq.gz -j ${SAMPLE}_2_val_2.fq.gz -o output/${SAMPLE}_metawrap.out -a greedy -E 0.05 -z 32
-
-```
-
-#### Second database (custom plants)
-```
-SAMPLE_LIST=hallstatt_names.txt
-SAMPLE=$(sed -n "$SLURM_ARRAY_TASK_ID"p $SAMPLE_LIST)
-
-kaiju -t nodes.dmp -f plant.fmi -i ${SAMPLE}_1_val_1.fq.gz -j ${SAMPLE}_2_val_2.fq.gz -o output/${SAMPLE}_metawrap.out -a greedy -E 0.05 -z 32
-```
-
-## Post-processing of the output: 
-#### See here for more options: https://github.com/bioinformatics-centre/kaiju#output-format 
-
-#### All of the output files need to be sorted to be merged:
-```
-for line in $(cat ../samplelist.txt); do sort -k2,2 ${line}.names.out > ${line}.sort.out; done
-```
-
-#### Now Merge the results from the two databases:
-```
-for line in $(cat ../samplelist.txt); do kaiju-mergeOutputs -i ../output/${line}.sort.out -j ../plants/output/${line}.sort.out -o ${line}.combined.out -t ../plants/nodes.dmp -v; done
-```
-
-#### Get only the classified:
-```
-for line in $(cat ../samplelist.txt); do grep -v "U" ${line}.combined.out > ${line}.classified.out; done
-```
-
-#### Add taxon names:
-```
-for line in $(cat ../samplelist.txt); do kaiju-addTaxonNames -t ../plants/nodes.dmp -n ../plants/names.dmp -i ${line}.classified.out -o ${line}.names.out; done
 ```
