@@ -13,6 +13,7 @@
    tar xf taxdump.tar.gz nodes.dmp names.dmp merged.dmp
    
    #Download the nr data from NCBI:
+   #BIG FILE - GOOD IDEA TO DO IN A SCREEN SESSION
    wget -c -P nr_euk https://ftp.ncbi.nih.gov/blast/db/FASTA/nr.gz
    wget -c -P nr_euk https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/accession2taxid/prot.accession2taxid.gz
 
