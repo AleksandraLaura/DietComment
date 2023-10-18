@@ -19,8 +19,8 @@ BMTAGGER_DB=/path/to/your/index/BMTAGGER_INDEX
 
 ## Run metaWrap (1.3.2)
 ```
-#Replace hallstatt_names.txt with any other dataset and run it in the same manner.
-SAMPLE_LIST=hallstatt_names.txt
+#Replace samplelist.txt with any other dataset and run it in the same manner.
+SAMPLE_LIST=samplelist.txt
 SAMPLE=$(sed -n "$SLURM_ARRAY_TASK_ID"p $SAMPLE_LIST)
 
 metaWRAP read_qc -1 raw_fastq/${SAMPLE}_1.fastq.gz -2 raw_fastq/${SAMPLE}_2.fastq.gz -o metawrap_output/$SAMPLE -t 5
