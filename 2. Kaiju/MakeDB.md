@@ -22,8 +22,7 @@
    wget https://github.com/AleksandraLaura/CoproliteAnalysesCommentaryALP/blob/main/2.%20Kaiju/kaiju-taxonlistEuk.tsv
 
    #Convert to Kaiju database:
-   gunzip -c nr_euk/nr.gz
-   kaiju-convertNR -m merged.dmp -t nodes.dmp -g nr_euk/prot.accession2taxid.gz -e kaiju-excluded-accessions.txt -a -o nr_euk/kaiju_db_nr_euk.faa -l kaiju-taxonlistEuk.tsv
+   gunzip -c nr_euk/nr.gz | kaiju-convertNR -m merged.dmp -t nodes.dmp -g nr_euk/prot.accession2taxid.gz -e kaiju-excluded-accessions.txt -a -o nr_euk/kaiju_db_nr_euk.faa -l kaiju-taxonlistEuk.tsv
 
    #The BWT
    kaiju-mkbwt -n 32 -a ACDEFGHIKLMNPQRSTVWY -o nr_euk/kaiju_db_nr_euk nr_euk/kaiju_db_nr_euk.faa
