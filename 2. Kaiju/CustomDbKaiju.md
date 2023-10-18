@@ -1,4 +1,4 @@
-# This is a note to help for custom database creation for Kaiju from protein sequences. Ultimatively not used in the workflow. 
+# This is a note to help in creation of a custom database for Kaiju from protein raw sequences. Ultimatively not used in the workflow. 
 
 #### Download fasta file (and accession list) - plant taxa mentioned in Reynoso-García et al.:
 ```
