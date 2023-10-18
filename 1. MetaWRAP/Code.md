@@ -1,6 +1,6 @@
 # metaWrap (1.3.2)
 
-## Make index to remove human sequences\
+## Make index to remove human sequences
 (as followed [here](https://github.com/bxlab/metaWRAP/blob/master/installation/database_installation.md#making-host-genome-index-for-bmtagger))
 ```
 mkdir BMTAGGER_INDEX
