@@ -67,7 +67,7 @@ wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR490/004/ERR4903914/ERR4903914.fas
 ```
 
 4. Code to download the ötzi data\
-   4.1 Go to AncientMetagenomeDir (*Ancient metagenome - host associated: libraries*)\
+   4.1 Go to AncientMetagenomeDir [(*Ancient metagenome - host associated: libraries*)](https://raw.githubusercontent.com/SPAAM-community/AncientMetagenomeDir/master/ancientmetagenome-hostassociated/libraries/ancientmetagenome-hostassociated_libraries.tsv)\
    4.2 Find all samples with "Iceman" included in the sample_name.\
    4.3 Get all the links and download likewise:
 ```
