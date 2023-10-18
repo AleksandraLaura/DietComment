@@ -66,10 +66,10 @@ wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR490/002/ERR4903912/ERR4903912.fas
 wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR490/004/ERR4903914/ERR4903914.fastq.gz
 ```
 
-4. Code to download the ötzi data (https://www.ebi.ac.uk/ena/browser/view/PRJEB11511)
-   4.1 Go to AncientMetagenomeDir (*Ancient metagenome - host associated: libraries*)
-   4.2 Find all samples with "Iceman" included in the sample_name.
-   4.3 Get all the links and download likewise:
+4. Code to download the ötzi data\
+   4.1 Go to AncientMetagenomeDir (*Ancient metagenome - host associated: libraries*)\
+   4.2 Find all samples with "Iceman" included in the sample_name.\
+   4.3 Get all the links and download likewise:\
 ```
 wget -nc ftp.sra.ebi.ac.uk/vol1/fastq/ERR109/007/ERR1094787/ERR1094787_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/ERR109/007/ERR1094787/ERR1094787_2.fastq.gz
 wget -nc ftp.sra.ebi.ac.uk/vol1/fastq/ERR109/008/ERR1094778/ERR1094778_1.fastq.gz;ftp.sra.ebi.ac.uk/vol1/fastq/ERR109/008/ERR1094778/ERR1094778_2.fastq.gz
