@@ -1,4 +1,4 @@
-## Here I present all of the raw analyses done for the commantary on Reynoso-García et al. (https://doi.org/10.1371/journal.pone.0292077)
+## Here I present all of the raw analyses done for the commantary on [Reynoso-García et al.](https://doi.org/10.1371/journal.pone.0292077)
 
 Here I present a directory structure symbolising the order in which the analyses were done. 
 The datasets used in here are
