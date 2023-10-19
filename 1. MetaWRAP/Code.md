@@ -23,5 +23,6 @@ BMTAGGER_DB=/path/to/your/index/BMTAGGER_INDEX
 SAMPLE_LIST=samplelist.txt
 SAMPLE=$(sed -n "$SLURM_ARRAY_TASK_ID"p $SAMPLE_LIST)
 
+#Note that adapters were already removed from the neanderthal samples therefore the option "--skip-trimming" was added and the same file was provided for both option "-1" and "-2"
 metaWRAP read_qc -1 raw_fastq/${SAMPLE}_1.fastq.gz -2 raw_fastq/${SAMPLE}_2.fastq.gz -o metawrap_output/$SAMPLE -t 5
 ```
