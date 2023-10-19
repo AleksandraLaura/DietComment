@@ -8,7 +8,7 @@
 SAMPLE_LIST=samplelist.txt
 SAMPLE=$(sed -n "$SLURM_ARRAY_TASK_ID"p $SAMPLE_LIST)
 
-kaiju -t nodes.dmp -f kaiju_db_nr_euk.fmi -i ${SAMPLE}_1_val_1.fq.gz -j ${SAMPLE}_2_val_2.fq.gz -o output/${SAMPLE}.out -a greedy -E 0.05 -z 32
+kaiju -t nodes.dmp -f kaiju_db_nr_euk.fmi -i edit/this/path/${SAMPLE}/final_pure_reads_1.fastq -j edit/this/path/${SAMPLE}/final_pure_reads_2.fastq -o output/${SAMPLE}.out -a greedy -E 0.05 -z 32
 ```
 
 ### Post-processing of the output: 
