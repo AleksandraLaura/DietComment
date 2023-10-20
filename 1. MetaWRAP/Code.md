@@ -27,7 +27,7 @@ SAMPLE=$(sed -n "$SLURM_ARRAY_TASK_ID"p $SAMPLE_LIST)
 metaWRAP read_qc -1 raw_fastq/${SAMPLE}_1.fastq.gz -2 raw_fastq/${SAMPLE}_2.fastq.gz -o metawrap_output/$SAMPLE -t 5
 ```
 
-##Run BMTagger seperatly for the Neanderthal data (based on the [source code](https://github.com/bxlab/metaWRAP/blob/master/bin/metawrap-modules/read_qc.sh)
+##Run BMTagger seperatly for the Neanderthal data (based on the [source code](https://github.com/bxlab/metaWRAP/blob/master/bin/metawrap-modules/read_qc.sh))
 ```
 SAMPLE_LIST=neanderthal_names.txt
 SAMPLE=$(sed -n "$SLURM_ARRAY_TASK_ID"p $SAMPLE_LIST)
