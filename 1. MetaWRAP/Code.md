@@ -26,3 +26,16 @@ SAMPLE=$(sed -n "$SLURM_ARRAY_TASK_ID"p $SAMPLE_LIST)
 #Note that adapters were already removed from the neanderthal samples therefore the option "--skip-trimming" was added and the same file was provided for both option "-1" and "-2"
 metaWRAP read_qc -1 raw_fastq/${SAMPLE}_1.fastq.gz -2 raw_fastq/${SAMPLE}_2.fastq.gz -o metawrap_output/$SAMPLE -t 5
 ```
+
+##Run BMTagger seperatly for the Neanderthal data (based on the [source code](https://github.com/bxlab/metaWRAP/blob/master/bin/metawrap-modules/read_qc.sh)
+```
+SAMPLE_LIST=neanderthal_names.txt
+SAMPLE=$(sed -n "$SLURM_ARRAY_TASK_ID"p $SAMPLE_LIST)
+
+/apps/conda/metawrap-mg-1.3.2/bin/bmtagger.sh -b /path/to/your/index/BMTAGGER_INDEX/hg38.bitmask -x /path/to/your/index/BMTAGGER_INDEX/hg38.srprism -T metawrap_output/ -q 1 -1 ${SAMPLE}.fastq -o metawrap_output/${SAMPLE}.bmtagger.list
+
+/apps/conda/metawrap-mg-1.3.2/bin/metawrap-scripts/skip_human_reads.py metawrap_output/${SAMPLE}.bmtagger.list raw_fastq/${SAMPLE}.fastq > metawrap_output/${SAMPLE}.clean.fastq
+
+rm metawrap_output/${SAMPLE}.bmtagger.list
+
+```
