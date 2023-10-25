@@ -1,0 +1,24 @@
+samples:
+  SRR24300527: /home/wmj412/data/wmj412.aleks/poopcommentary/columbian/mapping/SRR24300527.filtered.bam
+  SRR24300528: /home/wmj412/data/wmj412.aleks/poopcommentary/columbian/mapping/SRR24300528.filtered.bam
+
+metaDMG_cpp: /path/to/apps/bin/metaDMG-cpp
+names: /path/to/db/Vanilla/names.dmp
+nodes: /path/to/db/Vanilla/nodes.dmp
+acc2tax: /path/to/db/Vanilla/acc2tax.map.gz
+min_similarity_score: 0.95
+max_similarity_score: 1.0
+min_mapping_quality: 0
+lca_rank: ''
+max_position: 35
+min_reads: 0
+weight_type: 1
+custom_database: false
+forward_only: true
+output_dir: mapping/metadmg/
+parallel_samples: 10
+cores_per_sample: 4
+bayesian: true
+config_file: metadmg_columbian_config.yaml
+damage_mode: local
+version: 0.38.0
