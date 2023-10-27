@@ -18,8 +18,8 @@
    wget -c -P nr_euk https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/accession2taxid/prot.accession2taxid.gz
 
    #Download the needed files:
-   wget https://github.com/bioinformatics-centre/kaiju/blob/master/util/kaiju-excluded-accessions.txt
-   wget https://github.com/AleksandraLaura/CoproliteAnalysesCommentaryALP/blob/main/2.%20Kaiju/kaiju-taxonlistEuk.tsv
+   wget https://raw.githubusercontent.com/bioinformatics-centre/kaiju/master/util/kaiju-excluded-accessions.txt > kaiju-excluded-accessions.txt
+   wget https://raw.githubusercontent.com/AleksandraLaura/CoproliteAnalysesCommentaryALP/main/2.%20Kaiju/kaiju-taxonlistEuk.tsv > kaiju-taxonlistEuk.tsv
 
    #Convert to Kaiju database:
    gunzip -c nr_euk/nr.gz | kaiju-convertNR -m merged.dmp -t nodes.dmp -g nr_euk/prot.accession2taxid.gz -e kaiju-excluded-accessions.txt -a -o nr_euk/kaiju_db_nr_euk.faa -l kaiju-taxonlistEuk.tsv
