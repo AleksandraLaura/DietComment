@@ -23,3 +23,10 @@ for line in $(cat ../samplelist.txt); do grep -v "U" ${line}.out > ${line}.class
 ```
 for line in $(cat ../samplelist.txt); do kaiju-addTaxonNames -t ../nodes.dmp -n ../names.dmp -i ${line}.classified.out -o ${line}.names.out; done
 ```
+
+#### Count number of reads assigned to each taxon.
+```
+for line in $(cat ../samplelist.txt); do awk -F'\t' '{split($2, arr, "."); print arr[1]"\t"$3"\t"$4}' ${line}.names.out | awk -F'\t' '{ count[$0]++ } END {for (row in count) { print row"\t"count[row] } }' > ${line}.kaiju.summarized; done
+
+cat *.kaiju.summarized > combined.kaiju.summarized
+```
