@@ -1,4 +1,4 @@
-1. Code to download the Columbian data (https://www.ncbi.nlm.nih.gov/sra?linkname=bioproject_sra_all&from_uid=961747)
+1. Code to download the Puerto Rican data (https://www.ncbi.nlm.nih.gov/sra?linkname=bioproject_sra_all&from_uid=961747)
 ```
 #load or install sratoolkit
 fasterq-dump SRR24300527
