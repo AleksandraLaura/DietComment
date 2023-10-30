@@ -1,4 +1,4 @@
-## This is the code used for mapping and validation of the Columbian samples against a plant database.
+## This is the code used for mapping and validation of the Puerto Rican samples against a plant database.
 #### First combine the files from metaWRAP (by using reformat from BBmap suite) 
 -> because metaWRAP already trimmed the reads and removed indexes.
 ```
@@ -12,7 +12,7 @@ bowtie2 --threads 24 -k 16 -x /path/to/db/Vanilla/gtdb-r202-organelles-viruses -
 
 #### filterBAM
 ```
-SAMPLE_LIST=columbian_names.txt
+SAMPLE_LIST=pr_names.txt
 SAMPLE=$(sed -n "$SLURM_ARRAY_TASK_ID"p $SAMPLE_LIST)
 
 DB=/path/to/db/Vanilla/gtdb-r202-organelles-viruses
@@ -36,7 +36,7 @@ filterBAM -t 20 \
 
 #### metaDMG
 ```
-metaDMG config --metaDMG-cpp /path/to/apps/bin/metaDMG-cpp --names /path/to/db/Vanilla/names.dmp --nodes /path/to/db/Vanilla/nodes.dmp --acc2tax /path/to/db/Vanilla/acc2taxid.map.gz --min-similarity-score 0.95 --max-similarity-score 1.0 --max-position 35 --forward-only --output-dir mapping/metadmg/ --parallel-samples 5 --bayesian --config-file metadmg_columbian_config.yaml --overwrite mapping/SRR24300527.filtered.bam mapping/SRR24300528.filtered.bam
+metaDMG config --metaDMG-cpp /path/to/apps/bin/metaDMG-cpp --names /path/to/db/Vanilla/names.dmp --nodes /path/to/db/Vanilla/nodes.dmp --acc2tax /path/to/db/Vanilla/acc2taxid.map.gz --min-similarity-score 0.95 --max-similarity-score 1.0 --max-position 35 --forward-only --output-dir mapping/metadmg/ --parallel-samples 5 --bayesian --config-file metadmg_pr_config.yaml --overwrite mapping/SRR24300527.filtered.bam mapping/SRR24300528.filtered.bam
 
-metaDMG compute metadmg_columbian_config.yaml
+metaDMG compute metadmg_pr_config.yaml
 ```
