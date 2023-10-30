@@ -36,7 +36,7 @@ filterBAM -t 20 \
 
 #### metaDMG
 ```
-metaDMG config --metaDMG-cpp /path/to/apps/bin/metaDMG-cpp --names /path/to/db/Vanilla/names.dmp --nodes /path/to/db/Vanilla/nodes.dmp --acc2tax /path/to/db/Vanilla/acc2taxid.map.gz --min-similarity-score 0.95 --max-similarity-score 1.0 --max-position 35 --forward-only --output-dir mapping/metadmg/ --parallel-samples 5 --bayesian --config-file metadmg_pr_config.yaml --overwrite mapping/SRR24300527.filtered.bam mapping/SRR24300528.filtered.bam
+metaDMG config --metaDMG-cpp /path/to/apps/bin/metaDMG-cpp --names /path/to/db/Vanilla/names.dmp --nodes /path/to/db/Vanilla/nodes.dmp --acc2tax /path/to/db/Vanilla/acc2taxid.map.gz --min-similarity-score 0.95 --max-similarity-score 1.0 --max-position 35 --output-dir mapping/metadmg/ --parallel-samples 1 --cores-per-sample 5 --custom-database --bayesian --config-file metadmg_pr_config.yaml --overwrite mapping/SRR24300527.filtered.bam mapping/SRR24300528.filtered.bam
 
 metaDMG compute metadmg_pr_config.yaml
 ```
