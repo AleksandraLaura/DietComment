@@ -1,5 +1,13 @@
 ## This is the code used for mapping and validation of the Puerto Rican samples against a plant database.
 
+#### Adapter removal on the files from metaWRAP (to avoid removing human reads again)
+```
+AdapterRemoval --file1 ../metawrap_output/${SAMPLE}/final_pure_reads_1.fastq --file2 ../metawrap_output/${SAMPLE}/final_pure_reads_2.fastq --basename ${SAMPLE} --threads 8 --collapse
+
+#Maybe (?)
+cat *.collapsed.gz *.collapsed.truncated.gz *.singleton.truncated.gz *.pair1.truncated.gz *.pair2.truncated.gz > ${SAMPLE}.combined.fq
+```
+
 #### bowtie2 against the vanilla version of GTDB with archaea, bacteria, and viruses, plus organelles (we're using the files outputted by metaWRAP)
 ```
 bowtie2 --threads 24 -k 16 -x /path/to/db/Vanilla/gtdb-r202-organelles-viruses -1 metawrap_output/${SAMPLE}/final_pure_reads_1.fastq -2 metawrap_output/${SAMPLE}/final_pure_reads_2.fastq  --no-unal --np 1 --mp "1,1" --rdg "0,1" --rfg "0,1" --score-min "L,0,-0.05" --very-sensitive --no-unal | samtools view -b -@ 24 -F 4 - | samtools sort -n -@ 24 -o bam - > mapping/output.bam
