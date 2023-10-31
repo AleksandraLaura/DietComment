@@ -13,11 +13,11 @@ lca_rank: ''
 max_position: 35
 min_reads: 0
 weight_type: 1
-custom_database: false
-forward_only: true
+custom_database: true
+forward_only: false
 output_dir: mapping/metadmg/
-parallel_samples: 10
-cores_per_sample: 4
+parallel_samples: 1
+cores_per_sample: 5
 bayesian: true
 config_file: metadmg_pr_config.yaml
 damage_mode: local
