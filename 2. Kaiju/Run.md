@@ -30,3 +30,5 @@ for line in $(cat ../samplelist.txt); do awk -F'\t' '{split($2, arr, "."); print
 
 cat *.kaiju.summarized > combined.kaiju.summarized
 ```
+
+__the resulting file, with an additionall column specifing the dataset can be found in this repository under the name [_all_kaiju_summarized.txt.gz_](https://github.com/AleksandraLaura/CoproliteAnalysesCommentaryALP/blob/main/2.%20Kaiju/all_kaiju_summarized.txt.gz)__
