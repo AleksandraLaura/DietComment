@@ -14,6 +14,8 @@ sed -i 's/\.kaiju\.summarized//g' sample_list.txt
 #NuclearCounts = Taxid TAB Counts
 
 while read -r SAMPLE; do awk -F'\t' '{print $3 "\t" $2}' "${SAMPLE}.kaiju.summarized" > "${SAMPLE}.NuclearGenomes.txt"; done < sample_list.txt
+#Replace any spaces with "_"
+while read -r SAMPLE; do sed -i 's/ /_/g' ${SAMPLE}.NuclearGenomes.txt; done < sample_list.txt
 
 while read -r SAMPLE; do awk -F'\t' '{print $2 "\t" $4}' "${SAMPLE}.kaiju.summarized" > "${SAMPLE}.NuclearCounts.txt"; done < sample_list.txt
 
@@ -21,15 +23,11 @@ while read -r SAMPLE; do awk -F'\t' '{print $2 "\t" $4}' "${SAMPLE}.kaiju.summar
 while read -r SAMPLE; do cut -f 1 ${SAMPLE}.NuclearGenomes.txt | while read line; do echo '>'$line; echo ACGT; done > ${SAMPLE}.Nuclear.fasta; done < sample_list.txt
 
 
-#get kraken report
-#load (or install) centrifuge
-
-
+#Get kraken report
+#first load (or install) centrifuge
 SAMPLE_LIST=sample_list.txt
 SAMPLE=$(sed -n "$SLURM_ARRAY_TASK_ID"p $SAMPLE_LIST)
 
 centrifuge-build --conversion-table ${SAMPLE}.NuclearGenomes.txt --taxonomy-tree /path/to/nodes.dmp --name-table /path/to/names.dmp ${SAMPLE}.Nuclear.fasta ${SAMPLE}
 centrifuge-kreport -x ${SAMPLE} --is-count-table ${SAMPLE}.NuclearCounts.txt > ${SAMPLE}.kreport.txt
-
-
 ```
