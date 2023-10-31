@@ -1,4 +1,4 @@
-#### Extract the reads that mapped to the target sequences
+#### Extract the reads that mapped to the ID'ed taxa in Reynoso-García et al.
 ```
 grep 'Zea\|Ipomoea\|Capsicum\|Arachis\|Carica\|Solanum\|Gossypium\|Nicotiana' SRR24300527.names.out >> targets.out
 grep 'Zea\|Ipomoea\|Capsicum\|Arachis\|Carica\|Solanum\|Gossypium\|Nicotiana' SRR24300528.names.out >> targets.out
@@ -27,3 +27,5 @@ output$Read_Length <- as.numeric(as.character(output$Read_Length))
 # Plot the distribution
 plot(output$Read_Length, output$Count, type="h", lwd=10, col="skyblue", xlab="Read Length", ylab="Count", main="Read Length Distribution")
 ```
+
+![Read length distribtuion of the reads assigned to the ID'ed taxa Reynoso-García et al.](readlendist.PNG)
