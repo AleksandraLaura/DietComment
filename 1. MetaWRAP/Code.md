@@ -37,5 +37,27 @@ SAMPLE=$(sed -n "$SLURM_ARRAY_TASK_ID"p $SAMPLE_LIST)
 /apps/conda/metawrap-mg-1.3.2/bin/metawrap-scripts/skip_human_reads.py metawrap_output/${SAMPLE}.bmtagger.list raw_fastq/${SAMPLE}.fastq > metawrap_output/${SAMPLE}.clean.fastq
 
 rm metawrap_output/${SAMPLE}.bmtagger.list
+```
 
+## Downsample for the three non-Puerto Rican datasets:
+```
+#in the metawrap output directory for the three datasets
+mkdir downsample
+
+while read -r SAMPLE; do seqtk sample -s100 ${SAMPLE}/final_pure_reads_1.fastq 1399297 > downsampled/${SAMPLE}_downsampled_1.fastq; done < ../sample_list.txt
+
+while read -r SAMPLE; do seqtk sample -s100 ${SAMPLE}/final_pure_reads_2.fastq 1399297 > downsampled/${SAMPLE}_downsampled_1.fastq; done < ../sample_list.txt
+
+#Or as an array job:
+
+#module load seqtk
+
+SAMPLE_LIST=hallstatt_names.txt
+SAMPLE=$(sed -n "$SLURM_ARRAY_TASK_ID"p $SAMPLE_LIST)
+
+seqtk sample -s100 ${SAMPLE}/final_pure_reads_1.fastq 1399297 > downsampled/${SAMPLE}_downsampled_1.fastq
+seqtk sample -s100 ${SAMPLE}/final_pure_reads_2.fastq 1399297 > downsampled/${SAMPLE}_downsampled_1.fastq
+
+
+#These are then used as input for Kaiju runs
 ```
