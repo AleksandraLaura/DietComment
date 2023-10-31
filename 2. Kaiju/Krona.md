@@ -22,7 +22,15 @@ while read -r SAMPLE; do cut -f 1 ${SAMPLE}.NuclearGenomes.txt | while read line
 
 
 #get kraken report
-centrifuge-build --conversion-table NuclearGenomes.txt --taxonomy-tree nodes.dmp --name-table names.dmp Nuclear.fasta Nuclear
-centrifuge-kreport -x Nuclear --is-count-table Nuclear.counts > Nuclear.kreport.txt
+#load (or install) centrifuge
+
+
+SAMPLE_LIST=sample_list.txt
+SAMPLE=$(sed -n "$SLURM_ARRAY_TASK_ID"p $SAMPLE_LIST)
+
+centrifuge-build --conversion-table ${SAMPLE}.NuclearGenomes.txt --taxonomy-tree /path/to/nodes.dmp --name-table /path/to/names.dmp
+${SAMPLE}.Nuclear.fasta ${SAMPLE}
+centrifuge-kreport -x ${SAMPLE} --is-count-table ${SAMPLE}.NuclearCounts.txt > ${SAMPLE}.kreport.txt
+
 
 ```
