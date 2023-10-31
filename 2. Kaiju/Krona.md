@@ -30,4 +30,8 @@ SAMPLE=$(sed -n "$SLURM_ARRAY_TASK_ID"p $SAMPLE_LIST)
 
 centrifuge-build --conversion-table ${SAMPLE}.NuclearGenomes.txt --taxonomy-tree /path/to/nodes.dmp --name-table /path/to/names.dmp ${SAMPLE}.Nuclear.fasta ${SAMPLE}
 centrifuge-kreport -x ${SAMPLE} --is-count-table ${SAMPLE}.NuclearCounts.txt > ${SAMPLE}.kreport.txt
+
+#Load the krona module
+while read -r SAMPLE; do /path/to/apps/bin/kreport2krona.py -r ${SAMPLE}.kreport.txt -o ${SAMPLE}.krona.txt; done < sample_list.txt
+while read -r SAMPLE; do ktImportText ${SAMPLE}.krona.txt -o ${SAMPLE}.krona.html; done < sample_list.txt
 ```
