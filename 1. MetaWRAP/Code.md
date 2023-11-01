@@ -56,7 +56,7 @@ SAMPLE_LIST=hallstatt_names.txt
 SAMPLE=$(sed -n "$SLURM_ARRAY_TASK_ID"p $SAMPLE_LIST)
 
 seqtk sample -s100 ${SAMPLE}/final_pure_reads_1.fastq 1399297 > downsampled/${SAMPLE}_downsampled_1.fastq
-seqtk sample -s100 ${SAMPLE}/final_pure_reads_2.fastq 1399297 > downsampled/${SAMPLE}_downsampled_1.fastq
+seqtk sample -s100 ${SAMPLE}/final_pure_reads_2.fastq 1399297 > downsampled/${SAMPLE}_downsampled_2.fastq
 
 
 #These are then used as input for Kaiju runs
