@@ -1,6 +1,7 @@
 ## Here I present all of the raw analyses done for the commantary on [Reynoso-García et al.](https://doi.org/10.1371/journal.pone.0292077)
 
 The directory structure in this repository follows the order of the analyses. 
+
 0. [DataDownload](https://github.com/AleksandraLaura/CoproliteAnalysesCommentaryALP/tree/main/0.%20DataDownload): Includes of the code used to download the data, providing direct links to the downloads.
 1. [MetaWrap](https://github.com/AleksandraLaura/CoproliteAnalysesCommentaryALP/tree/main/1.%20MetaWRAP): Precisely describes all the steps of the metaWRAP pre-processing including the exact commands.
 2. [Kaiju](https://github.com/AleksandraLaura/CoproliteAnalysesCommentaryALP/tree/main/2.%20Kaiju): Includes all of the code and files needed to perform the database building as well as sample analysis with Kaiju together with the validation steps and plotting.
