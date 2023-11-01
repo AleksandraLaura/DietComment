@@ -1,4 +1,4 @@
-#### Here I present all of the analyses done for a commantary on [Reynoso-García et al.](https://doi.org/10.1371/journal.pone.0292077)
+## Here I present all of the analyses done for a commantary on [Reynoso-García et al.](https://doi.org/10.1371/journal.pone.0292077)
 
 #### The directory structure in this repository follows the order of the analyses. 
 
