@@ -1,0 +1,52 @@
+sample	count	species
+SRR24300527	121	other
+SRR24300527	29	Lupinus albus
+SRR24300527	2	Cajanus cajan
+SRR24300527	3	Pyrus x bretschneideri
+SRR24300527	1	Brassica carinata
+SRR24300527	3	Carica papaya
+SRR24300527	1	Citrus sinensis
+SRR24300527	3	Vitis vinifera
+SRR24300527	9	Capsicum annuum
+SRR24300527	1	Solanum lycopersicum
+SRR24300527	1	Solanum tuberosum
+SRR24300527	4	Nicotiana sylvestris
+SRR24300527	2	Helianthus annuus
+SRR24300527	1	Smallanthus sonchifolius
+SRR24300527	1	Diospyros lotus
+SRR24300527	14	Beta vulgaris
+SRR24300527	3	Hordeum vulgare
+SRR24300527	2	Oryza sativa
+SRR24300527	1	Panicum miliaceum
+SRR24300527	1	Eleusine coracana
+SRR24300527	2	Musa balbisiana
+SRR24300527	1	Zingiber officinale
+SRR24300527	1	Elaeis guineensis
+SRR24300527	1	Coptis chinensis
+SRR24300528	240	other
+SRR24300528	67	Lupinus albus
+SRR24300528	1	Arachis hypogaea
+SRR24300528	1	Cajanus cajan
+SRR24300528	1	Vigna radiata
+SRR24300528	3	Morella rubra
+SRR24300528	4	Ricinus communis
+SRR24300528	1	Erythroxylum novogranatense
+SRR24300528	3	Cannabis sativa
+SRR24300528	1	Ficus carica
+SRR24300528	1	Pyrus x bretschneideri
+SRR24300528	2	Cucumis melo
+SRR24300528	34	Vitis vinifera
+SRR24300528	1	Vitis rotundifolia
+SRR24300528	5	Brassica carinata
+SRR24300528	1	Gossypium barbadense
+SRR24300528	10	Capsicum annuum
+SRR24300528	1	Solanum commersonii
+SRR24300528	1	Solanum tuberosum
+SRR24300528	2	Ipomoea batatas
+SRR24300528	5	Olea europaea
+SRR24300528	2	Lactuca sativa
+SRR24300528	8	Beta vulgaris
+SRR24300528	1	Triticum turgidum
+SRR24300528	7	Zea mays
+SRR24300528	3	Zingiber officinale
+SRR24300528	2	Asparagus officinalis
