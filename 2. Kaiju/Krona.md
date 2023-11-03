@@ -35,3 +35,35 @@ centrifuge-kreport -x ${SAMPLE} --is-count-table ${SAMPLE}.NuclearCounts.txt > $
 while read -r SAMPLE; do /path/to/apps/bin/kreport2krona.py -r ${SAMPLE}.kreport.txt -o ${SAMPLE}.krona.txt; done < sample_list.txt
 while read -r SAMPLE; do ktImportText ${SAMPLE}.krona.txt -o ${SAMPLE}.krona.html; done < sample_list.txt
 ```
+#### Doughnut plot
+```
+#Exctract all of the plant assignments
+grep "p__Streptophyta" SRR24300527.krona.txt > SRR24300527_plant.krona.txt
+grep "p__Streptophyta" SRR24300528.krona.txt > SRR24300528_plant.krona.txt
+
+#Edit the files in excel so:
+1. Filter away eveything with count 0 (0 in the first column)
+2. If it's a species assignment keep the name and delete (s__) if anything else then type "other".
+3. If the taxon is not deemed as "edible" then change the species name to "other" - we only report edibles in the plot to compare to the publication
+4. Summarise the "others" (sum the count)
+5. Add the Sample name column
+6. Replace "_" with space
+
+The final file "edible_PR_plant.krona.txt" can be found in this repository. 
+
+
+#In R:
+if(!require(devtools)) install.packages("devtools")
+devtools::install_github("cardiomoon/moonBook")
+devtools::install_github("cardiomoon/webr")
+
+require(ggplot2)
+require(moonBook)
+require(webr)
+
+library(readr)
+eadibles_PR<-readr::read_tsv("Results/kaiju/edible_PR_plant.krona.txt")
+
+#Edit this to make it nicer but principle the same.
+PieDonut(eadibles_PR,aes(pies=sample,donuts=species,count=count))
+```
