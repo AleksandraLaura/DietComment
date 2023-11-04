@@ -1,9 +1,9 @@
 Culture	sample	count	species
-Huecoid	SRR24300528	287	Other Streptophyta
-Huecoid	SRR24300528	67	Lupinus albus
-Huecoid	SRR24300528	34	Vitis vinifera
-Huecoid	SRR24300528	21	Reported Streptophyta
-Saladoid	SRR24300527	191	Unreported Streptophyta
-Saladoid	SRR24300527	29	Lupinus albus
-Saladoid	SRR24300527	14	Beta vulgaris
-Saladoid	SRR24300527	17	Reported Streptophyta
+Huecoid	SRR24300528	287	4. Other unreported Streptophyta
+Huecoid	SRR24300528	67	2. Lupinus albus
+Huecoid	SRR24300528	34	3. Vitis vinifera
+Huecoid	SRR24300528	21	1. Reported Streptophyta
+Saladoid	SRR24300527	191	1. Other unreported Streptophyta
+Saladoid	SRR24300527	29	3. Lupinus albus
+Saladoid	SRR24300527	14	2. Beta vulgaris
+Saladoid	SRR24300527	17	4. Reported Streptophyta
