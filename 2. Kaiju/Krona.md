@@ -64,6 +64,6 @@ require(webr)
 library(readr)
 eadibles_PR<-readr::read_tsv("Results/kaiju/edible_PR_plant.krona.txt")
 
-#Edit this to make it nicer but principle the same.
-PieDonut(eadibles_PR,aes(pies=sample,donuts=species,count=count))
+#This is the general plot. I renamed a couple of cells to force the order of the donuts and then overlayed lables but nothing in the data changed (all is reported in the final plot figure)
+PieDonut(eadibles_PR,aes(pies=Culture,donuts=species,count=count),labelposition = 3, showRatioThreshold = F)
 ```
