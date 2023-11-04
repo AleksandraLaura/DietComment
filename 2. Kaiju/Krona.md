@@ -42,14 +42,13 @@ grep "p__Streptophyta" SRR24300527.krona.txt > SRR24300527_plant.krona.txt
 grep "p__Streptophyta" SRR24300528.krona.txt > SRR24300528_plant.krona.txt
 
 #Edit the files in excel so:
-1. Filter away eveything with count 0 (0 in the first column)
-2. If it's a species assignment keep the name and delete (s__) if anything else then type "other".
-3. If the taxon is not deemed as "edible" then change the species name to "other" - we only report edibles in the plot to compare to the publication
-4. Summarise the "others" (sum the count)
-5. Add the Sample name column
-6. Replace "_" with space
+0. Import them both one after the other
+1. Add the sample and Culture name column
+2. Filter away everything with count 0 (0 in the first column)
+3. Find the reported taxa and summarise them
+4. For every taxon with 10 or less reads (or that is not reported on species level) - summarise them into "Other Streptophyta"
 
-The final file "edible_PR_plant.krona.txt" can be found in this repository. 
+The final file "PR_plant.txt" can be found in this repository. 
 
 
 #In R:
@@ -62,8 +61,6 @@ require(moonBook)
 require(webr)
 
 library(readr)
-eadibles_PR<-readr::read_tsv("Results/kaiju/edible_PR_plant.krona.txt")
-
-#This is the general plot. I renamed a couple of cells to force the order of the donuts and then overlayed lables but nothing in the data changed (all is reported in the final plot figure)
-PieDonut(eadibles_PR,aes(pies=Culture,donuts=species,count=count),labelposition = 3, showRatioThreshold = F)
+plants_PR<-readr::read_tsv("Results/kaiju/PR_plant.txt")
+PieDonut(plants_PR,aes(pies=Culture,donuts=species,count=count),labelposition = 1, showRatioThreshold = F)
 ```
