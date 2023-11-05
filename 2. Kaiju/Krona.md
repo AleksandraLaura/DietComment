@@ -35,7 +35,8 @@ centrifuge-kreport -x ${SAMPLE} --is-count-table ${SAMPLE}.NuclearCounts.txt > $
 while read -r SAMPLE; do /path/to/apps/bin/kreport2krona.py -r ${SAMPLE}.kreport.txt -o ${SAMPLE}.krona.txt; done < sample_list.txt
 while read -r SAMPLE; do ktImportText ${SAMPLE}.krona.txt -o ${SAMPLE}.krona.html; done < sample_list.txt
 ```
-#### Doughnut plot
+#### Doughnut plot 
+The raw input files can be found [here (Saladoid)](https://raw.githubusercontent.com/AleksandraLaura/CoproliteAnalysesCommentaryALP/main/2.%20Kaiju/SRR24300527.krona.txt) and [here (Huecoid)](https://raw.githubusercontent.com/AleksandraLaura/CoproliteAnalysesCommentaryALP/main/2.%20Kaiju/SRR24300528.krona.txt).
 ```
 #Exctract all of the plant assignments
 grep "p__Streptophyta" SRR24300527.krona.txt > SRR24300527_plant.krona.txt
