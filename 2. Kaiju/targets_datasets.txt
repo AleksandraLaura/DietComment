@@ -21,9 +21,9 @@ Neanderthal	4577	Zea mays	ERR4903919	1
 Ötzi	4577	Zea mays	ERR1094787	5
 Ötzi	4577	Zea mays	ERR1094789	8
 Ötzi	4577	Zea mays	ERR1094793	1
-Puerto Rican	4577	Zea mays	SRR24300528	7
+Huecoid	4577	Zea mays	SRR24300528	7
 Neanderthal	4120	Ipomoea batatas	ERR4903912	1
-Puerto Rican	4120	Ipomoea batatas	SRR24300528	2
+Huecoid	4120	Ipomoea batatas	SRR24300528	2
 Neanderthal	4072	Capsicum annuum	ERR4903909	1
 Neanderthal	4072	Capsicum annuum	ERR4903910	2
 Neanderthal	4072	Capsicum annuum	ERR4903912	2
@@ -35,8 +35,8 @@ Neanderthal	4072	Capsicum annuum	ERR4903919	2
 Ötzi	4072	Capsicum annuum	ERR1094788	3
 Ötzi	4072	Capsicum annuum	ERR1094789	1
 Ötzi	4072	Capsicum annuum	ERR4670283	1
-Puerto Rican	4072	Capsicum annuum	SRR24300527	9
-Puerto Rican	4072	Capsicum annuum	SRR24300528	10
+Saladoid	4072	Capsicum annuum	SRR24300527	9
+Huecoid	4072	Capsicum annuum	SRR24300528	10
 Neanderthal	3818	Arachis hypogaea	ERR4903906	1
 Neanderthal	3818	Arachis hypogaea	ERR4903912	3
 Neanderthal	3818	Arachis hypogaea	ERR4903913	21
@@ -44,12 +44,12 @@ Neanderthal	3818	Arachis hypogaea	ERR4903915	1
 Neanderthal	3818	Arachis hypogaea	ERR4903916	2
 Neanderthal	3818	Arachis hypogaea	ERR4903917	10
 Ötzi	130453	Arachis duranensis	ERR1094787	1
-Puerto Rican	3818	Arachis hypogaea	SRR24300528	1
+Huecoid	3818	Arachis hypogaea	SRR24300528	1
 Neanderthal	3649	Carica papaya	ERR4903912	4
 Neanderthal	3649	Carica papaya	ERR4903916	1
 Neanderthal	3649	Carica papaya	ERR4903919	1
 Ötzi	3649	Carica papaya	ERR4670283	1
-Puerto Rican	3649	Carica papaya	SRR24300527	3
+Saladoid	3649	Carica papaya	SRR24300527	3
 Hallstatt	3634	Gossypium barbadense	ERR5766165	1
 Hallstatt	3634	Gossypium barbadense	ERR5766166	1
 Hallstatt	3634	Gossypium barbadense	ERR5766170	2
@@ -69,11 +69,11 @@ Neanderthal	3634	Gossypium barbadense	ERR4903917	1
 Ötzi	3634	Gossypium barbadense	ERR1094789	3
 Ötzi	3634	Gossypium barbadense	ERR1094793	3
 Ötzi	3634	Gossypium barbadense	ERR1094794	2
-Puerto Rican	3634	Gossypium barbadense	SRR24300528	1
+Huecoid	3634	Gossypium barbadense	SRR24300528	1
 Neanderthal	4096	Nicotiana sylvestris	ERR4903911	1
 Neanderthal	4096	Nicotiana sylvestris	ERR4903912	1
 Neanderthal	4096	Nicotiana sylvestris	ERR4903915	1
 Ötzi	4096	Nicotiana sylvestris	ERR1094787	1
-Puerto Rican	4096	Nicotiana sylvestris	SRR24300527	4
+Saladoid	4096	Nicotiana sylvestris	SRR24300527	4
 Ötzi	4081	Solanum lycopersicum	ERR1094787	1
-Puerto Rican	4081	Solanum lycopersicum	SRR24300527	1
+Saladoid	4081	Solanum lycopersicum	SRR24300527	1
