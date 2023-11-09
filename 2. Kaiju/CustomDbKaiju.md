@@ -60,6 +60,6 @@ awk 'FNR==NR {f2[$1]=$2;next} /^>/ { for (i in f2) { if (index(substr($1,2), i))
 
 #### Make the actual databases
 ```
-kaiju-mkbwt -n 32 -a ACDEFGHIKLMNPQRSTVWY -o /home/wmj412/data/wmj412.aleks/hallstatt_maize/kaiju_part/plants/plants kaiju_sequences.faa
-kaiju-mkfmi /home/wmj412/data/wmj412.aleks/hallstatt_maize/kaiju_part/plants/plants
+kaiju-mkbwt -n 32 -a ACDEFGHIKLMNPQRSTVWY -o path/to/output/plants_db kaiju_sequences.faa
+kaiju-mkfmi path/to/output/plants_db
 ```
