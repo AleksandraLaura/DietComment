@@ -64,5 +64,5 @@ require(webr)
 
 library(readr)
 plants_PR<-readr::read_tsv("Results/kaiju/PR_plant.txt")
-PieDonut(plants_PR,aes(pies=Culture,donuts=species,count=count), pieLabelSize = 5, labelposition = 1)
+PieDonut(plants_PR,aes(pies=Culture,donuts=species,count=count), pieLabelSize = 5, labelposition = 1, showRatioDonut = FALSE, showRatioThreshold = FALSE)
 ```
