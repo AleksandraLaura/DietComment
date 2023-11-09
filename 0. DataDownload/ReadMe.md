@@ -5,8 +5,8 @@ fasterq-dump SRR24300527
 fasterq-dump SRR24300528
 ```
 
-2. Code to download the Neanderthal data (https://www.ebi.ac.uk/ena/browser/view/PRJEB41665)
-I'm only downloading the samples which reported [presence of human mtDNA](https://www.nature.com/articles/s42003-021-01689-y/figures/2 ) though at least one method: 
+2. Code to download the Neanderthal data (https://www.ebi.ac.uk/ena/browser/view/PRJEB41665) \
+Only downloading the samples which reported [presence of human mtDNA](https://www.nature.com/articles/s42003-021-01689-y/figures/2 ) though at least one method: 
 ```
 wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR490/000/ERR4903910/ERR4903910.fastq.gz
 wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR490/008/ERR4903918/ERR4903918.fastq.gz
@@ -18,10 +18,10 @@ wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR490/002/ERR4903912/ERR4903912.fas
 ```
 
 3. Code to download the ötzi data\
-   4.1 Go to AncientMetagenomeDir [(*Ancient metagenome - host associated: libraries*)](https://raw.githubusercontent.com/SPAAM-community/AncientMetagenomeDir/master/ancientmetagenome-hostassociated/libraries/ancientmetagenome-hostassociated_libraries.tsv)\
-   4.2 Find all samples with "Iceman" included in the sample_name.\
-   4.3 Pick one dataset from each reported sample. \
-   4.3 Get all the links and download likewise:
+   3.1 Go to AncientMetagenomeDir [(*Ancient metagenome - host associated: libraries*)](https://raw.githubusercontent.com/SPAAM-community/AncientMetagenomeDir/master/ancientmetagenome-hostassociated/libraries/ancientmetagenome-hostassociated_libraries.tsv)\
+   3.2 Find all samples with "Iceman" included in the sample_name.\
+   3.3 Pick one dataset from each reported sample. \
+   3.4 Get all the links and download likewise:
 ```
 wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR109/007/ERR1094787/ERR1094787_1.fastq.gz
 wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR109/007/ERR1094787/ERR1094787_2.fastq.gz
