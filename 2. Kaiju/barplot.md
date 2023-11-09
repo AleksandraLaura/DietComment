@@ -22,10 +22,10 @@ level_order <- c('Huecoid', 'Saladoid', 'Neanderthal', 'Ötzi')
 #Plot itself
 ggplot(IDed_taxa_mean, aes(x = factor(Dataset, level = level_order), y = mean_nReads)) + 
   geom_bar(aes(fill=Species), stat = "identity", position = "dodge", alpha = 0.9) +
-  scale_fill_brewer(palette="BrBG", 
+  scale_fill_brewer(palette="YlGn", 
                     "Species",
-    breaks = unique(barplot_IDedtaxa$Species),
-    labels = c(expression(italic("Zea mays")), expression(italic("Ipomoea batatas")), expression(italic("Capsicum annuum")), expression(italic("Arachis hypogaea")), expression(italic("Arachis duranensis")), expression(italic("Carica papaya")), expression(italic("Gossypium barbadense")), expression(italic("Nicotiana sylvestris")), expression(italic("Solanum lycopersicum")))) +
+    breaks = c("Arachis duranensis", "Arachis hypogaea", "Capsicum annuum", "Carica papaya", "Gossypium barbadense", "Ipomoea batatas", "Nicotiana sylvestris", "Solanum lycopersicum", "Zea mays"),
+    labels = c(expression(italic("Arachis duranensis")), expression(italic("Arachis hypogaea")), expression(italic("Capsicum annuum")), expression(italic("Carica papaya")), expression(italic("Gossypium barbadense")),  expression(italic("Ipomoea batatas")), expression(italic("Nicotiana sylvestris")), expression(italic("Solanum lycopersicum")), expression(italic("Zea mays")))) +
   theme_minimal() +
   xlab("") +
   ylab("number of reads") +
