@@ -6,26 +6,21 @@ fasterq-dump SRR24300528
 ```
 
 2. Code to download the Neanderthal data (https://www.ebi.ac.uk/ena/browser/view/PRJEB41665)
+I'm only downloading the samples which reported [presence of human mtDNA](https://www.nature.com/articles/s42003-021-01689-y/figures/2 ) though at least one method: 
 ```
-wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR490/005/ERR4903915/ERR4903915.fastq.gz
 wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR490/000/ERR4903910/ERR4903910.fastq.gz
-wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR490/007/ERR4903917/ERR4903917.fastq.gz
 wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR490/008/ERR4903918/ERR4903918.fastq.gz
 wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR490/007/ERR4903907/ERR4903907.fastq.gz
 wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR490/009/ERR4903909/ERR4903909.fastq.gz
-wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR490/003/ERR4903913/ERR4903913.fastq.gz
 wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR490/001/ERR4903911/ERR4903911.fastq.gz
-wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR490/008/ERR4903908/ERR4903908.fastq.gz
-wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR490/006/ERR4903916/ERR4903916.fastq.gz
-wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR490/009/ERR4903919/ERR4903919.fastq.gz
 wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR490/006/ERR4903906/ERR4903906.fastq.gz
 wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR490/002/ERR4903912/ERR4903912.fastq.gz
-wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR490/004/ERR4903914/ERR4903914.fastq.gz
 ```
 
 3. Code to download the ötzi data\
    4.1 Go to AncientMetagenomeDir [(*Ancient metagenome - host associated: libraries*)](https://raw.githubusercontent.com/SPAAM-community/AncientMetagenomeDir/master/ancientmetagenome-hostassociated/libraries/ancientmetagenome-hostassociated_libraries.tsv)\
    4.2 Find all samples with "Iceman" included in the sample_name.\
+   4.3 Pick one dataset from each reported sample. \
    4.3 Get all the links and download likewise:
 ```
 wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR109/007/ERR1094787/ERR1094787_1.fastq.gz
