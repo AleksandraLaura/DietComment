@@ -11,23 +11,36 @@ library(RColorBrewer)
 
 barplot_IDedtaxa<-readr::read_tsv("Results/kaiju/targets_datasets.txt")
 
-#Calculate the mean number of reads pr. taxon for each dataset
-IDed_taxa_mean <- barplot_IDedtaxa %>%
-  group_by(Species, Dataset) %>%
-  summarise(mean_nReads = mean(nReads, na.rm = TRUE))
+# A function factory for getting integer y-axis values.
+integer_breaks <- function(n = 5, ...) {
+  fxn <- function(x) {
+    breaks <- floor(pretty(x, n, ...))
+    names(breaks) <- attr(breaks, "labels")
+    breaks
+  }
+  return(fxn)
+}
 
 #To get the axis in order
 level_order <- c('Huecoid', 'Saladoid', 'Neanderthal', 'Ötzi') 
 
-#Plot itself
-ggplot(IDed_taxa_mean, aes(x = factor(Dataset, level = level_order), y = mean_nReads)) + 
-  geom_bar(aes(fill=Species), stat = "identity", position = "dodge", alpha = 0.9) +
-  scale_fill_brewer(palette="YlGn", 
+#Make and save the plots:
+
+pdf(file = "barplot_targets.pdf",   # The directory you want to save the file in
+    width = 10, # The width of the plot in inches
+    height = 6) # The height of the plot in inches
+
+ggplot(barplot_IDedtaxa, aes(x = factor(Dataset, level = level_order), y = nReads)) + 
+  geom_bar(aes(fill=Species), stat = "identity", position=position_dodge2(preserve = "single"), alpha = 0.9, col = "grey") +
+  scale_fill_brewer(palette="RdBu", 
                     "Species",
     breaks = c("Arachis duranensis", "Arachis hypogaea", "Capsicum annuum", "Carica papaya", "Gossypium barbadense", "Ipomoea batatas", "Nicotiana sylvestris", "Solanum lycopersicum", "Zea mays"),
     labels = c(expression(italic("Arachis duranensis")), expression(italic("Arachis hypogaea")), expression(italic("Capsicum annuum")), expression(italic("Carica papaya")), expression(italic("Gossypium barbadense")),  expression(italic("Ipomoea batatas")), expression(italic("Nicotiana sylvestris")), expression(italic("Solanum lycopersicum")), expression(italic("Zea mays")))) +
+  scale_y_continuous(breaks = integer_breaks()) +
   theme_minimal() +
   xlab("") +
   ylab("number of reads") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+dev.off()
 ```
