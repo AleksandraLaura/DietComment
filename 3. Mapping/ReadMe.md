@@ -42,3 +42,5 @@ metaDMG config --metaDMG-cpp /path/to/apps/bin/metaDMG-cpp --names /path/to/db/V
 
 metaDMG compute metadmg_pr_config.yaml
 ```
+
+The metaDMG .pdf export of the results can be found [here](https://github.com/AleksandraLaura/CoproliteAnalysesCommentaryALP/blob/main/3.%20Mapping/metaDMG_results.pdf)
