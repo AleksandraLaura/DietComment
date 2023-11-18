@@ -30,4 +30,4 @@ plot(output$Read_Length, output$Count, type="h", lwd=10, col="skyblue", xlab="Re
 
 ![Read length distribtuion of the reads assigned to the ID'ed taxa Reynoso-García et al.](readlendist.PNG)
 
-# Lastly we BLASTed the reads assigned to any of the reported species by Kaiju. The results can be found (here)[]
+# Lastly we BLASTed the reads assigned to any of the reported species by Kaiju. The results can be found [here](https://raw.githubusercontent.com/AleksandraLaura/CoproliteAnalysesCommentaryALP/main/2.%20Kaiju/BLAST_results_commentary_on_Reynoso-Garc%C3%ADa.tsv)
