@@ -29,3 +29,5 @@ plot(output$Read_Length, output$Count, type="h", lwd=10, col="skyblue", xlab="Re
 ```
 
 ![Read length distribtuion of the reads assigned to the ID'ed taxa Reynoso-García et al.](readlendist.PNG)
+
+# Lastly we BLASTed the reads assigned to any of the reported species by Kaiju. The results can be found (here)[]
