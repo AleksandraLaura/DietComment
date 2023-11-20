@@ -45,3 +45,29 @@ metaDMG compute metadmg_pr_config.yaml
 
 The metaDMG .pdf export of the results can be found [here](https://github.com/AleksandraLaura/CoproliteAnalysesCommentaryALP/blob/main/3.%20Mapping/metaDMG_results.pdf) and the raw results files [here](https://github.com/AleksandraLaura/CoproliteAnalysesCommentaryALP/tree/main/3.%20Mapping/results).
 
+
+#### Plotting (in R)
+```
+library(readr)
+library(ggplot2)
+library(ggtext)
+library(tidyverse)
+library(RColorBrewer)
+library(ggrepel)
+
+metadmg<-read.csv("Results/pathopipe/metadmg_results.csv", row.names = NULL)
+metadmg_species <- subset(metadmg, tax_rank == "species")
+metadmg_species <- subset(metadmg_species, N_reads > 10)
+metadmg_names <- metadmg_species %>% mutate(across('sample', str_replace, 'SRR24300527', 'Saladoid'))
+metadmg_names <- metadmg_names %>% mutate(across('sample', str_replace, 'SRR24300528', 'Huecoid'))
+metadmg_names$tax_name <- gsub("s__", "", metadmg_names$tax_name)
+
+ggplot(metadmg_names, aes(x = significance, y = damage, col = sample)) + 
+  geom_point(aes(size=N_reads)) + 
+  geom_text_repel(data=subset(metadmg_names, damage > 0.08 | significance > 0.8), aes(significance,damage,label=tax_name), min.segment.length = 0, size=2) +
+  scale_color_manual(values = c("#f9918a", "#33ccd0")) +
+  theme_minimal() +
+  scale_y_continuous(labels = scales::percent) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
