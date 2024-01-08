@@ -19,7 +19,6 @@ BMTAGGER_DB=/path/to/your/index/BMTAGGER_INDEX
 
 ## Run metaWrap (1.3.2)
 ```
-#Replace samplelist.txt with any other dataset and run it in the same manner.
 SAMPLE_LIST=samplelist.txt
 SAMPLE=$(sed -n "$SLURM_ARRAY_TASK_ID"p $SAMPLE_LIST)
 
