@@ -4,7 +4,7 @@
 
 ### Actual run:
 
-Puerto Rican & ötzi data:
+#### Puerto Rican & ötzi data:
 ``` 
 SAMPLE_LIST=samplelist.txt
 SAMPLE=$(sed -n "$SLURM_ARRAY_TASK_ID"p $SAMPLE_LIST)
@@ -12,13 +12,13 @@ SAMPLE=$(sed -n "$SLURM_ARRAY_TASK_ID"p $SAMPLE_LIST)
 kaiju -t nodes.dmp -f kaiju_db_nr_euk.fmi -i /path/to/metaWRAP/output/${SAMPLE}/final_pure_reads_1.fastq -j /path/to/metaWRAP/output/${SAMPLE}/final_pure_reads_2.fastq -o output/${SAMPLE}.out -a greedy -E 0.05 -z 32
 ```
 
-Neanderthal:
+#### Neanderthal:
 ``` 
 kaiju -t nodes.dmp -f kaiju_db_nr_euk.fmi -i /path/to/metaWRAP/output/ERR4903912_downsampled.fastq -o output/ERR4903912.out -a greedy -E 0.05 -z 32
 ```
 
 ### Post-processing of the output: 
-##### See here for more options: https://github.com/bioinformatics-centre/kaiju#output-format 
+##### _See here for more options: https://github.com/bioinformatics-centre/kaiju#output-format_ 
 
 #### Get only the classified:
 ```
