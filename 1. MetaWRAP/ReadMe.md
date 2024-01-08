@@ -29,34 +29,25 @@ metaWRAP read_qc -1 raw_fastq/${SAMPLE}_1.fastq.gz -2 raw_fastq/${SAMPLE}_2.fast
 
 ##Run BMTagger seperatly for the Neanderthal data (based on the [source code](https://github.com/bxlab/metaWRAP/blob/master/bin/metawrap-modules/read_qc.sh))
 ```
-SAMPLE_LIST=neanderthal_names.txt
-SAMPLE=$(sed -n "$SLURM_ARRAY_TASK_ID"p $SAMPLE_LIST)
+/apps/conda/metawrap-mg-1.3.2/bin/bmtagger.sh -b /path/to/your/index/BMTAGGER_INDEX/hg38.bitmask -x /path/to/your/index/BMTAGGER_INDEX/hg38.srprism -T metawrap_output/ -q 1 -1 ERR4903912.fastq -o metawrap_output/ERR4903912.bmtagger.list
 
-/apps/conda/metawrap-mg-1.3.2/bin/bmtagger.sh -b /path/to/your/index/BMTAGGER_INDEX/hg38.bitmask -x /path/to/your/index/BMTAGGER_INDEX/hg38.srprism -T metawrap_output/ -q 1 -1 ${SAMPLE}.fastq -o metawrap_output/${SAMPLE}.bmtagger.list
+/apps/conda/metawrap-mg-1.3.2/bin/metawrap-scripts/skip_human_reads.py metawrap_output/ERR4903912.bmtagger.list raw_fastq/ERR4903912.fastq > metawrap_output/ERR4903912.clean.fastq
 
-/apps/conda/metawrap-mg-1.3.2/bin/metawrap-scripts/skip_human_reads.py metawrap_output/${SAMPLE}.bmtagger.list raw_fastq/${SAMPLE}.fastq > metawrap_output/${SAMPLE}.clean.fastq
-
-rm metawrap_output/${SAMPLE}.bmtagger.list
+rm metawrap_output/ERR4903912.bmtagger.list
 ```
 
-## Downsample for the three non-Puerto Rican datasets:
+## Downsample for the two non-Puerto Rican datasets:
 ```
 #in the metawrap output directory for the three datasets
-mkdir downsample
+#module load seqtk
+
+mkdir downsampled
 
 while read -r SAMPLE; do seqtk sample -s100 ${SAMPLE}/final_pure_reads_1.fastq 1399297 > downsampled/${SAMPLE}_downsampled_1.fastq; done < ../sample_list.txt
 
 while read -r SAMPLE; do seqtk sample -s100 ${SAMPLE}/final_pure_reads_2.fastq 1399297 > downsampled/${SAMPLE}_downsampled_1.fastq; done < ../sample_list.txt
 
-#Or as an array job:
-
-#module load seqtk
-
-SAMPLE_LIST=samplelist.txt
-SAMPLE=$(sed -n "$SLURM_ARRAY_TASK_ID"p $SAMPLE_LIST)
-
-seqtk sample -s100 ${SAMPLE}/final_pure_reads_1.fastq 1399297 > downsampled/${SAMPLE}_downsampled_1.fastq
-seqtk sample -s100 ${SAMPLE}/final_pure_reads_2.fastq 1399297 > downsampled/${SAMPLE}_downsampled_2.fastq
+seqtk sample -s100 ERR4903912.clean.fastq 1399297 > downsampled/ERR4903912_downsampled.fastq
 
 
 #These are then used as input for Kaiju runs
