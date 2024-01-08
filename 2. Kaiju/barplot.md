@@ -1,6 +1,6 @@
 #### This is all of the code showing how to plot the dotplot showing all of the reported taxa hits:
 
-To get the input [.txt](https://raw.githubusercontent.com/AleksandraLaura/CoproliteAnalysesCommentaryALP/main/2.%20Kaiju/targets_datasets.txt) file, I filter the [summarized Kaiju output file](https://github.com/AleksandraLaura/CoproliteAnalysesCommentaryALP/blob/main/2.%20Kaiju/all_kaiju_summarized.txt.gz) only for the reported species from [Reynoso-García et al.](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0292077). And seperate the two Puerto Rican files into their own "Dataset" category just like in the publication.
+To get the input [.txt](https://raw.githubusercontent.com/AleksandraLaura/CoproliteAnalysesCommentaryALP/main/2.%20Kaiju/targets_datasets.txt) file, I filter the [summarized Kaiju output file](https://github.com/AleksandraLaura/DietComment/blob/main/S2_Table.xlsx) only for the reported species from [Reynoso-García et al.](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0292077). And seperate the two Puerto Rican files into their own "Dataset" category just like in the publication.
 
 Here is the R code:
 ```
