@@ -10,7 +10,7 @@
 #### The datasets used in here are:
 1. **Puerto Rican**: Reynoso-García et al. (https://doi.org/10.1371/journal.pone.0292077)
 2. **Neanderthal**: Rampelli et al. (https://doi.org/10.1038/s42003-021-01689-y)
-3. **Ötzi**: Maixner et al. (https://doi.org/10.1126/science.aad2545) and Tett et al. (https://doi.org/10.1016/j.chom.2019.08.018)
+3. **Ötzi**: Maixner et al. (https://doi.org/10.1126/science.aad2545)
 
 For any questions or comments feel free to submit an issue or e-mail me on: aleksandra.pach@sund.ku.dk
 
