@@ -7,8 +7,8 @@ cd krona
 ln -s ../*/kaiju_output/*.kaiju.summarized .
 
 #Prep the files
-ls *.kaiju.summarized > sample_list.txt
-sed -i 's/\.kaiju\.summarized//g' sample_list.txt
+ls *.kaiju.summarized > PR_sample_list.txt
+sed -i 's/\.kaiju\.summarized//g' PR_sample_list.txt
 
 #NuclearGenomes = SpeciesName (or any unique identifier) TAB Taxid
 #NuclearCounts = Taxid TAB Counts
@@ -25,7 +25,7 @@ while read -r SAMPLE; do cut -f 1 ${SAMPLE}.NuclearGenomes.txt | while read line
 
 #Get kraken report
 #first load (or install) centrifuge
-SAMPLE_LIST=sample_list.txt
+SAMPLE_LIST=PR_sample_list.txt
 SAMPLE=$(sed -n "$SLURM_ARRAY_TASK_ID"p $SAMPLE_LIST)
 
 centrifuge-build --conversion-table ${SAMPLE}.NuclearGenomes.txt --taxonomy-tree /path/to/nodes.dmp --name-table /path/to/names.dmp ${SAMPLE}.Nuclear.fasta ${SAMPLE}
