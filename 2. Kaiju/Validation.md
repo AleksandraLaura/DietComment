@@ -8,6 +8,11 @@ seqtk subseq metawrap_output/SRR24300527/final_pure_reads_1.fastq target_reads.t
 seqtk subseq metawrap_output/SRR24300527/final_pure_reads_2.fastq target_reads.txt >> target_seqs.fastq
 seqtk subseq metawrap_output/SRR24300528/final_pure_reads_1.fastq target_reads.txt >> target_seqs.fastq
 seqtk subseq metawrap_output/SRR24300528/final_pure_reads_2.fastq target_reads.txt >> target_seqs.fastq
+
+seqtk subseq metawrap_output/SRR24300527/final_pure_reads_1.fastq target_reads.txt >> KaijuTargets_27.R1.fastq
+seqtk subseq metawrap_output/SRR24300527/final_pure_reads_2.fastq target_reads.txt >> KaijuTargets_27.R2.fastq
+seqtk subseq metawrap_output/SRR24300528/final_pure_reads_1.fastq target_reads.txt >> KaijuTargets_28.R1.fastq
+seqtk subseq metawrap_output/SRR24300528/final_pure_reads_2.fastq target_reads.txt >> KaijuTargets_28.R2.fastq
 ```
 
 #### Read length distribution 
@@ -30,4 +35,10 @@ plot(output$Read_Length, output$Count, type="h", lwd=10, col="skyblue", xlab="Re
 
 ![Read length distribtuion of the reads assigned to the ID'ed taxa Reynoso-García et al.](readlendist.PNG)
 
-# Lastly we BLASTed the reads assigned to any of the reported species by Kaiju. The results can be found [here](https://raw.githubusercontent.com/AleksandraLaura/DietComment/main/S3_Table.tsv)
+#### Collaps the reads that mapped to the ID'ed taxa in Reynoso-García et al.
+```
+AdapterRemoval --file1 KaijuTargets_27.R1.fastq --file2 KaijuTargets_27.R2.fastq --basename KaijuTargets --collapse
+AdapterRemoval --file1 KaijuTargets_28.R1.fastq --file2 KaijuTargets_28.R2.fastq --basename KaijuTargets --collapse
+```
+
+# We then BLASTed the collapsed reads assigned to any of the reported species by Kaiju. The results can be found [here](https://raw.githubusercontent.com/AleksandraLaura/DietComment/main/S3_Table.tsv)
