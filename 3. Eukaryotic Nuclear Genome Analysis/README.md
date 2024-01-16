@@ -54,13 +54,13 @@ Lastly, we merge the two metaDMG outputs by removing the header of one file and 
 
 ```
 tail -n +2 SRR92_metaDMGout.csv > SRR92_metaDMGout_noHeader.csv
-cat SRR95_metaDMGout.csv SRR92_metaDMGout_noHeader.csv > SRR_metaDMGout.csv
+cat SRR95_metaDMGout.csv SRR92_metaDMGout_noHeader.csv > results/SRR_metaDMGout.csv
 ```
 
 Next execute the Rscript to filter, plot and output the data
 ```
+cd results/
 Rscript analysis_script.R "SRR_metaDMGout.csv"
-
 ```
 Now double-check that the results are identical to the plots in the results folder.
 
