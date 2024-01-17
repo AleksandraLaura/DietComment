@@ -57,7 +57,7 @@ output_28 <- output_28 %>%
 # Combine the two data frames
 combined_data <- bind_rows(output_27, output_28)
 
-pdf(file = "lenght_collapsed.pdf",   # The directory you want to save the file in
+pdf(file = "length_collapsed.pdf",   # The directory you want to save the file in
     width = 8, # The width of the plot in inches
     height = 5) # The height of the plot in inches
 
@@ -74,4 +74,4 @@ dev.off()
 
 ```
 
-#### Read length distribtuion of the reads assigned to the ID'ed taxa Reynoso-García et al. can be found [here](https://github.com/AleksandraLaura/DietComment/blob/main/2.%20Kaiju/lenght_collapsed.pdf)
+#### Read length distribtuion of the reads assigned to the ID'ed taxa Reynoso-García et al. can be found [here](https://github.com/AleksandraLaura/DietComment/blob/main/2.%20Kaiju/length_collapsed.pdf)
