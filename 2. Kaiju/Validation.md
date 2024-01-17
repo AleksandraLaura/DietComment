@@ -74,8 +74,4 @@ dev.off()
 
 ```
 
-#### Read length distribtuion of the reads assigned to the ID'ed taxa Reynoso-García et al.
-
-<iframe src="lenght_collapsed.pdf" width="100%" height="500" frameborder="0" />
-
-
+#### Read length distribtuion of the reads assigned to the ID'ed taxa Reynoso-García et al. can be found [here](https://github.com/AleksandraLaura/DietComment/blob/main/2.%20Kaiju/lenght_collapsed.pdf)
