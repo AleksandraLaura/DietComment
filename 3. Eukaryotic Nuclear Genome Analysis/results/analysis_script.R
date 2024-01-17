@@ -37,7 +37,7 @@ ggplot(dt, aes(x = mean_L, fill = sample)) +
 dev.off()
 
 # Subsetting the dataframe and keeping only the 95% similarity threshold profiles
-subset_data1 <- subset(dt, !grepl("_92", sample))
+# subset_data1 <- subset(dt, !grepl("_92", sample))
 
 # Plot taxa and their amount of Damage and the significance with size = number of reads for 95 similarity files
 pdf(file = "Damage_significance_Eukatota95sim.pdf", width = 6, height = 5)  
