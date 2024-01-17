@@ -76,6 +76,6 @@ dev.off()
 
 #### Read length distribtuion of the reads assigned to the ID'ed taxa Reynoso-García et al.
 
-xfun::embed_file("lenght_collapsed.pdf")
+xfun::embed_file(lenght_collapsed.pdf)
 
 
