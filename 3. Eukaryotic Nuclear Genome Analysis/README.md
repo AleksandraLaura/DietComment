@@ -31,7 +31,7 @@ cd results/
 ```
 ### LCA and metaDMG analysis 
 
-First, we generate config.yaml file and specify files, taxonomy paths etc. also in the config file other LCA and metaDMG settings can be set. We ran data using first the 95-100% similarity threshold and next relaxed the criteria and ran 92-100% similarity, we also changed the number of positions to print to 30 (for aesthetic reasons). 
+First, we generate config.yaml file and specify files, taxonomy paths etc. also in the config file other LCA and metaDMG settings can be set. We ran data using first the 95-100% similarity threshold, we also changed the number of positions to print to 30 (for aesthetic reasons). 
 
 Setting variables
 ```
@@ -44,17 +44,10 @@ Generating the config file and computing the misincorporation statistics, and co
 ```
 metaDMG config *.sam.gz --names $nam --nodes $nod --acc2tax $acc
 
-metaDMG compute config92sim.yaml
 metaDMG compute config95sim.yaml
 
 metaDMG convert --add-fit-predictions --output SRR95_metaDMGout.csv
-metaDMG convert --add-fit-predictions --output SRR92_metaDMGout.csv
-```
-Lastly, we merge the two metaDMG outputs by removing the header of one file and concatenating both.
 
-```
-tail -n +2 SRR92_metaDMGout.csv > SRR92_metaDMGout_noHeader.csv
-cat SRR95_metaDMGout.csv SRR92_metaDMGout_noHeader.csv > results/SRR_metaDMGout.csv
 ```
 
 Next execute the Rscript to filter, plot and output the data
