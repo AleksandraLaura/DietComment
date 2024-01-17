@@ -1,3 +1,5 @@
 # Data download
 
-download the folding files using the link provided xxxx-link-will-come-xxxx to this folder
+Alignment files are provided via this download link https://sid.erda.dk/cgi-sid/ls.py?share_id=gDogPcw61I 
+
+
