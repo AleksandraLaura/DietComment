@@ -74,6 +74,8 @@ dev.off()
 
 ```
 
-![Read length distribtuion of the reads assigned to the ID'ed taxa Reynoso-García et al.](lenght_collapsed.pdf)
+#### Read length distribtuion of the reads assigned to the ID'ed taxa Reynoso-García et al.
+
+xfun::embed_file("lenght_collapsed.pdf")
 
 
