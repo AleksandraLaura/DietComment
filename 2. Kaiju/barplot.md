@@ -1,6 +1,6 @@
 #### This is all of the code showing how to plot the dotplot showing all of the reported taxa hits:
 
-To get the input [.txt](https://raw.githubusercontent.com/AleksandraLaura/CoproliteAnalysesCommentaryALP/main/2.%20Kaiju/targets_datasets.txt) file, I filter the [summarized Kaiju output file](https://github.com/AleksandraLaura/DietComment/blob/main/S2_Table.xlsx) only for the reported species from [Reynoso-García et al.](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0292077). And seperate the two Puerto Rican files into their own "Dataset" category just like in the publication.
+To get the input [targets_species.txt](https://raw.githubusercontent.com/AleksandraLaura/DietComment/main/2.%20Kaiju/targets_species.txt) and [targets_genera.txt](https://raw.githubusercontent.com/AleksandraLaura/DietComment/main/2.%20Kaiju/targets_genera.txt) files, I filter the [summarized Kaiju output file](https://github.com/AleksandraLaura/DietComment/blob/main/S2_Table.xlsx) only for the reported species and genera from [Reynoso-García et al.](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0292077). And seperate the two Puerto Rican files into their own "Dataset" category just like in the publication.
 
 Here is the R code:
 ```
@@ -9,7 +9,9 @@ library(ggtext)
 library(tidyverse)
 library(RColorBrewer)
 
-barplot_IDedtaxa<-readr::read_tsv("Results/kaiju/targets_datasets.txt")
+barplot_ID_species<-readr::read_tsv("Results/kaiju/targets_species.txt")
+barplot_ID_genera<-readr::read_tsv("Results/kaiju/targets_genera.txt")
+
 
 # A function factory for getting integer y-axis values.
 integer_breaks <- function(n = 5, ...) {
@@ -22,24 +24,37 @@ integer_breaks <- function(n = 5, ...) {
 }
 
 #To get the axis in order
-level_order <- c('Huecoid', 'Saladoid', 'Neanderthal', 'Ötzi') 
+level_order <- c('Huecoid', 'Saladoid', 'Neanderthal', 'Ötzi', 'Hallstatt') 
 
 #Make and save the plots:
 
-pdf(file = "barplot_targets.pdf",   # The directory you want to save the file in
+pdf(file = "barplot_species.pdf",   # The directory you want to save the file in
     width = 10, # The width of the plot in inches
     height = 6) # The height of the plot in inches
 
-ggplot(barplot_IDedtaxa, aes(x = factor(Dataset, level = level_order), y = nReads)) + 
+ggplot(barplot_ID_species, aes(x = factor(Dataset, level = level_order), y = nReads)) + 
   geom_bar(aes(fill=Species), stat = "identity", position=position_dodge2(preserve = "single"), alpha = 0.9, col = "grey") +
-  scale_fill_brewer(palette="RdBu", 
-                    "Species",
-    breaks = c("Arachis duranensis", "Arachis hypogaea", "Capsicum annuum", "Carica papaya", "Gossypium barbadense", "Ipomoea batatas", "Nicotiana sylvestris", "Solanum lycopersicum", "Zea mays"),
-    labels = c(expression(italic("Arachis duranensis")), expression(italic("Arachis hypogaea")), expression(italic("Capsicum annuum")), expression(italic("Carica papaya")), expression(italic("Gossypium barbadense")),  expression(italic("Ipomoea batatas")), expression(italic("Nicotiana sylvestris")), expression(italic("Solanum lycopersicum")), expression(italic("Zea mays")))) +
   scale_y_continuous(breaks = integer_breaks()) +
   theme_minimal() +
   xlab("") +
   ylab("number of reads") +
+  ggtitle("Species level Hallstatt") +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+dev.off()
+
+
+pdf(file = "barplot_genus.pdf",   # The directory you want to save the file in
+    width = 10, # The width of the plot in inches
+    height = 6) # The height of the plot in inches
+
+ggplot(barplot_ID_genera, aes(x = factor(Dataset, level = level_order), y = nReads)) + 
+  geom_bar(aes(fill=Species), stat = "identity", position=position_dodge2(preserve = "single"), alpha = 0.9, col = "grey") +
+  scale_y_continuous(breaks = integer_breaks()) +
+  theme_minimal() +
+  xlab("") +
+  ylab("number of reads") +
+  ggtitle("Genus level Hallstatt") +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 dev.off()
