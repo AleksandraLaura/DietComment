@@ -19,3 +19,9 @@ wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR490/002/ERR4903912/ERR4903912.fas
 wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR109/007/ERR1094787/ERR1094787_1.fastq.gz
 wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR109/007/ERR1094787/ERR1094787_2.fastq.gz
 ```
+
+4. Code to download the Hallstatt data (https://www.ebi.ac.uk/ena/browser/view/PRJEB44507)
+```
+wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR576/006/ERR5766166/ERR5766166_1.fastq.gz
+wget -nc ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR576/006/ERR5766166/ERR5766166_2.fastq.gz
+```
