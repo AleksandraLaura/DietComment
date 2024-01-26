@@ -11,6 +11,7 @@
 1. **Puerto Rican**: Reynoso-García et al. (https://doi.org/10.1371/journal.pone.0292077)
 2. **Neanderthal**: Rampelli et al. (https://doi.org/10.1038/s42003-021-01689-y)
 3. **Ötzi**: Maixner et al. (https://doi.org/10.1126/science.aad2545)
+4. **Hallstatt**: Maixner et. al. (https://doi.org/10.1016/j.cub.2021.09.031)
 
 For any questions or comments feel free to submit an issue or e-mail me on: aleksandra.pach@sund.ku.dk
 
