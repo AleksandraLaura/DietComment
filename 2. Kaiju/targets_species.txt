@@ -1,0 +1,23 @@
+Dataset	Sample	TaxID	Species	nReads
+Hallstatt	ERR5766166	4577	Zea mays	1
+Ötzi	ERR1094787	4577	Zea mays	5
+Huecoid	SRR24300528	4577	Zea mays	7
+Neanderthal	ERR4903912	4120	Ipomoea batatas	1
+Huecoid	SRR24300528	4120	Ipomoea batatas	2
+Neanderthal	ERR4903912	4072	Capsicum annuum	2
+Saladoid	SRR24300527	4072	Capsicum annuum	9
+Huecoid	SRR24300528	4072	Capsicum annuum	10
+Neanderthal	ERR4903912	3818	Arachis hypogaea	3
+Ötzi	ERR1094787	130453	Arachis duranensis	1
+Huecoid	SRR24300528	3818	Arachis hypogaea	1
+Neanderthal	ERR4903912	3649	Carica papaya	4
+Saladoid	SRR24300527	3649	Carica papaya	3
+Ötzi	ERR1094787	4081	Solanum lycopersicum	1
+Saladoid	SRR24300527	4081	Solanum lycopersicum	1
+Hallstatt	ERR5766166	3634	Gossypium barbadense	1
+Neanderthal	ERR4903912	3634	Gossypium barbadense	2
+Ötzi	ERR1094787	3634	Gossypium barbadense	1
+Huecoid	SRR24300528	3634	Gossypium barbadense	1
+Neanderthal	ERR4903912	4096	Nicotiana sylvestris	1
+Ötzi	ERR1094787	4096	Nicotiana sylvestris	1
+Saladoid	SRR24300527	4096	Nicotiana sylvestris	4
