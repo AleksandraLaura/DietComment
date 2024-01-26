@@ -4,7 +4,7 @@
 
 ### Actual run:
 
-#### Puerto Rican & ötzi data:
+#### Puerto Rican, ötzi & Hallstatt data:
 ``` 
 SAMPLE_LIST=samplelist.txt
 SAMPLE=$(sed -n "$SLURM_ARRAY_TASK_ID"p $SAMPLE_LIST)
