@@ -55,7 +55,7 @@ Next execute the Rscript to filter, plot and output the data (our output file fr
 cd results/
 Rscript analysis_script.R "diet_data.csv"
 ```
-The resulting plots can be found here: [Figure 1a](https://github.com/AleksandraLaura/DietComment/blob/main/3.%20Eukaryotic%20Nuclear%20Genome%20Analysis/results/Damage_significance_Eukatota95sim.pdf) and [Figure 1b]https://github.com/AleksandraLaura/DietComment/blob/main/3.%20Eukaryotic%20Nuclear%20Genome%20Analysis/results/density_meanlength.pdf)
+The resulting plots can be found here: [Figure 1a](https://github.com/AleksandraLaura/DietComment/blob/main/3.%20Eukaryotic%20Nuclear%20Genome%20Analysis/results/Damage_significance_Eukatota95sim.pdf) and [Figure 1b](https://github.com/AleksandraLaura/DietComment/blob/main/3.%20Eukaryotic%20Nuclear%20Genome%20Analysis/results/density_meanlength.pdf)
 
 
 
