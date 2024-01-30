@@ -14,7 +14,7 @@ vsearch --fastx_uniques $file --fastqout $file.vs.fq --minseqlength 30 --strand 
 done
 ```
 ## Mapping
-We next mapped all reads against the RefSeq (release number 213), the NCBI nt (downloaded on 16th Sept. 2022) and the PhyloNorway plant database (Database composition and construction followed Kjaer et al 2022 and the build is described in details here: https://github.com/miwipe/KapCopenhagen, including the download of the NCBI taxonomy into a /taxonomy/ folder).
+We next mapped all reads against the RefSeq (release number 213), the NCBI nt (downloaded on 16th Sept. 2022) and the PhyloNorway plant database (Database composition and construction followed Kjaer et al 2022 and the build is described in details here: https://github.com/miwipe/KapCopenhagen, including the download of the NCBI taxonomy into a /taxonomy/ folder, see details here https://github.com/miwipe/ngsLCA).
 
 First, we link the data to the data folder and make a list of the samples 
 
@@ -46,14 +46,14 @@ metaDMG config *.sam.gz --names $nam --nodes $nod --acc2tax $acc
 
 metaDMG compute config95sim.yaml
 
-metaDMG convert --add-fit-predictions --output SRR95_metaDMGout.csv
+metaDMG convert --add-fit-predictions --output diet_data.csv
 
 ```
 
-Next execute the Rscript to filter, plot and output the data
+Next execute the Rscript to filter, plot and output the data (our output file from metaDMG can be downloaded using wget https://sid.erda.dk/share_redirect/Hcoy2JC4bM; mv Hcoy2JC4bM diet_data.csv).
 ```
 cd results/
-Rscript analysis_script.R "SRR_metaDMGout.csv"
+Rscript analysis_script.R "diet_data.csv"
 ```
 Now double-check that the results are identical to the plots in the results folder.
 
