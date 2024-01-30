@@ -1,4 +1,7 @@
 samples:
+  ERR5766166: ERR5766166.downsampled.fastq.vs.fq.merged.sort.sam.gz      
+  ERR1094787: ERR1094787.downsampled.combined.fastq.merged.sort.sam.gz
+  ERR4903912: ERR4903912.combined.fastq.merged.sort.sam.gz
   SRR24300527: SRR24300527.combined.fastq.merged.sort.sam.gz
   SRR24300528: SRR24300528.combined.fastq.merged.sort.sam.gz
 metaDMG_cpp: /projects/lundbeck/people/npl206/programmes/metaDMG-cpp/metaDMG-cpp
@@ -18,7 +21,7 @@ stopIfErrors: 0
 output_dir: data_95sim
 parallel_samples: 2
 cores_per_sample: 8
-bayesian: false
+bayesian: true
 config_file: config.yaml
 damage_mode: lca
 version: 0.38.0
