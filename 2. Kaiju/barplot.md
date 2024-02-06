@@ -1,4 +1,4 @@
-#### This is all of the code showing how to plot the dotplot showing all of the reported taxa hits:
+#### This is all of the code showing how to plot the barplot showing all of the reported taxa hits:
 
 To get the input [targets_species.txt](https://raw.githubusercontent.com/AleksandraLaura/DietComment/main/2.%20Kaiju/targets_species.txt) and [targets_genera.txt](https://raw.githubusercontent.com/AleksandraLaura/DietComment/main/2.%20Kaiju/targets_genera.txt) files, I filter the [summarized Kaiju output file](https://github.com/AleksandraLaura/DietComment/blob/main/S2_Table.xlsx) only for the reported species and genera from [Reynoso-García et al.](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0292077). And seperate the two Puerto Rican files into their own "Dataset" category just like in the publication.
 
