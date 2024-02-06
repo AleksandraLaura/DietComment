@@ -1,6 +1,6 @@
 #### Doughnut plot 
-The raw input files can be found [here (Saladoid)](https://raw.githubusercontent.com/AleksandraLaura/CoproliteAnalysesCommentaryALP/main/2.%20Kaiju/SRR24300527.krona.txt) and [here (Huecoid)](https://raw.githubusercontent.com/AleksandraLaura/CoproliteAnalysesCommentaryALP/main/2.%20Kaiju/SRR24300528.krona.txt).
-```
+The raw input file can be found [here](https://github.com/AleksandraLaura/DietComment/blob/main/S2_Table.xlsx).
+
 #Edit the file in excel so:
 1. Add the sample and Culture name column
 3. Find the reported taxa and summarise them
