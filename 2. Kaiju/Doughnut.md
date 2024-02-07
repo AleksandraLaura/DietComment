@@ -4,7 +4,7 @@ The raw input file can be found in the S2 Table ([here](https://github.com/Aleks
 ##### Edit the file in excel so:
 1. Filter for Puerto Rican
 2. Filter away everything that isn't a plant
-3. Find the reported taxa and top two non-reported taxa
+3. Find the reported species and top two non-reported species
 4. Summarize all other plant taxa into either "edible" or "non-edible"
 5. Change the column names/order and add the "Culture" variable
 
