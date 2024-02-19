@@ -26,3 +26,5 @@ library(readr)
 plants_PR<-readr::read_tsv("Results/kaiju/PR_plant.txt")
 PieDonut(plants_PR,aes(pies=Culture,donuts=species,count=count), pieLabelSize = 5, labelposition = 1, showRatioDonut = FALSE, showRatioThreshold = FALSE)
 ```
+
+#### Final Figure 2 with the pie/donut plot can be found [here](https://github.com/AleksandraLaura/DietComment/blob/main/2.%20Kaiju/Figure%202.pdf)
