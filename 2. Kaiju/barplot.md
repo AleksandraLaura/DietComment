@@ -59,3 +59,5 @@ ggplot(barplot_ID_genera, aes(x = factor(Dataset, level = level_order), y = nRea
 
 dev.off()
 ```
+
+#### Final Figure 2 with the barplot can be found [here](https://github.com/AleksandraLaura/DietComment/blob/main/2.%20Kaiju/Figure%202.pdf)
