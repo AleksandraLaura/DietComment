@@ -43,7 +43,7 @@ mkdir downsampled
 
 while read -r SAMPLE; do seqtk sample -s100 ${SAMPLE}/final_pure_reads_1.fastq 1399297 > downsampled/${SAMPLE}_downsampled_1.fastq; done < ../samplelist.txt
 
-while read -r SAMPLE; do seqtk sample -s100 ${SAMPLE}/final_pure_reads_2.fastq 1399297 > downsampled/${SAMPLE}_downsampled_1.fastq; done < ../samplelist.txt
+while read -r SAMPLE; do seqtk sample -s100 ${SAMPLE}/final_pure_reads_2.fastq 1399297 > downsampled/${SAMPLE}_downsampled_2.fastq; done < ../samplelist.txt
 
 seqtk sample -s100 ERR4903912.clean.fastq 1399297 > downsampled/ERR4903912_downsampled.fastq
 
