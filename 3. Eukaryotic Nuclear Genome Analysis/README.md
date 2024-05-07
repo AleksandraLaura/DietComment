@@ -5,7 +5,7 @@ At the same time, metaDMG computes a series of statistics that can be used to va
 
 ## Dereplication
 
-We dereplicated the two samples to remove identical sequences using vsearch (https://github.com/torognes/vsearch).
+We dereplicated the samples to remove identical sequences using vsearch (https://github.com/torognes/vsearch).
 
 ```
 for file in *.combined.fastq
