@@ -1,4 +1,4 @@
-Dataset	Sample	TaxID	Species	nReads
+Dataset	RunAccession	TaxID	Species	nReads
 Hallstatt	ERR5766166	4577	Zea mays	1
 Ötzi	ERR1094787	4577	Zea mays	5
 Huecoid	SRR24300528	4577	Zea mays	7
@@ -21,3 +21,5 @@ Huecoid	SRR24300528	3634	Gossypium barbadense	1
 Neanderthal	ERR4903912	4096	Nicotiana sylvestris	1
 Ötzi	ERR1094787	4096	Nicotiana sylvestris	1
 Saladoid	SRR24300527	4096	Nicotiana sylvestris	4
+Lola	ERR3250152	4072	Capsicum annuum	4
+Lola	ERR3250152	3634	Gossypium barbadense	1
