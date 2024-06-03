@@ -40,6 +40,7 @@ cat *.kaiju.summarized > combined.kaiju.summarized
 #### Find the species of interest:
 ```
 grep -E "Zea mays|Ipomoea batatas|Capsicum annuum|Arachis|Carica papaya|Solanum lycopersicum|Gossypium barbadense|Nicotiana sylvestris" *.summarized
+grep -E "Zea|Ipomoea|Capsicum|Arachis|Carica|Solanum|Gossypium|Nicotiana" kaiju_output/*.summarized
 ```
 
 __the resulting file, with an additionall column specifing the dataset can be found in the [_S1 Table_](https://github.com/AleksandraLaura/DietComment/blob/main/S1_Table.xlsx)__
