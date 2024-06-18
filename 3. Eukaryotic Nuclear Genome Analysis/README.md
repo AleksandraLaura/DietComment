@@ -46,9 +46,9 @@ First, we generate config.yaml file and specify files, taxonomy paths etc. also 
 
 Setting variables
 ```
-nam=/taxonomy/ncbi_taxonomy3dec2020/names.dmp
-nod=/taxonomy/ncbi_taxonomy3dec2020/nodes.dmp
-acc=/taxonomy/ncbi_taxonomy3dec2020/combined_taxid_accssionNO_20201120.gz
+acc2tax=/ncbi_taxonomy/combined_accession2taxid_20221112.gz
+nodes=/ncbi_taxonomy/nodes.dmp
+names=/ncbi_taxonomy/names.dmp
 ```
 
 Generating the config file and computing the misincorporation statistics, and converting the metaDMG output to a .csv file
