@@ -17,7 +17,7 @@ df <- read_csv(input_file)
 # subsetting the table for Eukaryotes using grepl and filter for taxonomic classification at genus level with 10 reads or more classified
 dt <- df %>% filter(N_reads >= 10, grepl("Eukaryota",tax_path), grepl("\\bgenus\\b", tax_rank))
 
-# plot taxa and their amount of Damage and the significance with size = number of reads for all 4 files
+# plot taxa and their amount of Damage and the significance with size = number of reads
 pdf(file = "Damage_significance_Eukatota.pdf", width = 6, height = 5)  
 ggplot() + 
     geom_text(data=dt, aes(x=MAP_damage,y=MAP_significance,label=tax_name),size=3,vjust=-1, hjust=0) +  # add the site labels
