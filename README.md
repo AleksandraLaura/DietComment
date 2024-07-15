@@ -1,5 +1,7 @@
 ## Here I present all of the analyses done for a commantary on [Reynoso-García et al.](https://doi.org/10.1371/journal.pone.0292077)
 
+A pre-print describing our work can be found [here](https://www.biorxiv.org/content/10.1101/2024.02.27.581519v1)
+
 #### The directory structure in this repository follows the order of the analyses. 
 
 0. [DataDownload](https://github.com/AleksandraLaura/CoproliteAnalysesCommentaryALP/tree/main/0.%20DataDownload): With the code used to download the data, providing direct links to the downloads.
