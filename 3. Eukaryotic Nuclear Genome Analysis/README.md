@@ -51,14 +51,23 @@ nodes=/ncbi_taxonomy/nodes.dmp
 names=/ncbi_taxonomy/names.dmp
 ```
 
-Generating the config file and computing the misincorporation statistics, and converting the metaDMG output to a .csv file
+Generating the metaDMG output follows a series of commands, first we make a text file with sample names, then reduce the header using compressbam, remove sequences longer than 200Bp and lastly parse these through metaDMG lca, dfit and aggregate.
 ```
-metaDMG config *.sam.gz --names $nam --nodes $nod --acc2tax $acc
+ll *.col.sorted.sam.gz | awk '{print $9}' | cut -f1 -d. > sample.list
 
-metaDMG compute config95sim.yaml
+cat sample.list | parallel -j 4 '/projects/lundbeck/people/npl206/programmes/ngsDMG/metaDMG-cpp/misc/compressbam --threads 1 --input {}.col.sorted.sam.gz --output {}.merged.bam'
 
-metaDMG convert --add-fit-predictions --output diet_data.csv
+cat sample.list | parallel -j 2 'samtools view -h {}.merged.bam  | awk '\''BEGIN {OFS="\t"} /^@/ || (length($10) < 200)'\'' | samtools view -b -o {}.filtered199.sort.bam'
 
+cat sample.list | parallel -j 2 '/projects/lundbeck/people/npl206/programmes/ngsDMG/metaDMG-cpp/metaDMG-cpp lca --names $names --nodes $nodes --acc2tax $acc2tax --sim_score_low 0.95 --sim_score_high 1.0 --how_many 30 --weight_type 1 --fix_ncbi 0 --threads 4 --bam {}.filtered199.sort.bam --out_prefix {}.filtered199.sort'
+
+cat sample.list | parallel -j 2 '/projects/lundbeck/people/npl206/programmes/ngsDMG/metaDMG-cpp/metaDMG-cpp dfit {}.filtered199.sort.bdamage.gz --threads 6 --names $names --nodes $nodes --showfits 2 --nopt 10 --nbootstrap 20 --doboot 1 --seed 1234 --lib ds --out {}.filtered199.sort'
+
+cat sample.list | parallel -j 2 'metaDMG-cpp aggregate {}.filtered199.sort.bdamage.gz  --nodes $nodes --names $names --lcastat {}.filtered199.sort.stat.gz --dfit {}.filtered199.sort.dfit.gz'
+
+for file in *.sort.bdamage.gz.stat.gz ;  do echo "$file"; zcat "$file" | tail -n +2| awk -v filename="$file" '{print filename "\t" $0}' >> metadmg_data2.tsv ; done
+zcat *.sort.bdamage.gz.stat.gz | head -1 > metadmg_header.tsv
+cat metadmg_header.tsv metadmg_data2.tsv > metadmg_data_final.tsv # OBS add the string "sample" to the first row in the header using tab seperated format
 ```
 
 Next execute the Rscript to filter, plot and output the data (our output file from metaDMG can be downloaded using wget https://sid.erda.dk/share_redirect/Hcoy2JC4bM; mv Hcoy2JC4bM diet_data.csv).
